@@ -27,7 +27,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'debug_toolbar',
     'captcha',
     'crispy_forms',
 
@@ -49,7 +48,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    "debug_toolbar.middleware.DebugToolbarMiddleware",
 ]
 
 ROOT_URLCONF = 'django_shop.urls'
@@ -115,12 +113,7 @@ INTERNAL_IPS = [
     "127.0.0.1",
 ]
 
-''' используется только во время разработки и не подходит для продекшена,
-записываетет все письма в файл на сервере.
-EMAIL_FILE_PATH - указывать путь где будут храниться письма
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend' - выводит сообщение
-в консоль. Для реальной отправки нужно задать EMAIL_HOST_USER и EMAIL_HOST_PASSWORD
-'''
+
 EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
 EMAIL_FILE_PATH = 'emails/email-messages/'
 

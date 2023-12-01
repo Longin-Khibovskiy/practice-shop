@@ -59,16 +59,16 @@
         </div>
     </div>
     <hr class="col-7 mx-auto">
-    <div class="card shadow-custom border-0 col-lg-8 mx-auto mb-3">
-        <h3 class="py-2 text-grey">Отзывы:</h3>
-        {% for review in product.reviews.all %}
-            <span class="font-weight-bold py-2 text-grey">{{ review.author }} - {{ review.rating }}/5 - {{ review.created|date }}</span>
-            <span class="text-justify pb-2">{{ review.text }}</span>
-            <hr>
-        {% empty %}
-            <span class="pb-2">Пока нет отзывов</span>
-        {% endfor %}
-    </div>
+{#    <div class="card shadow-custom border-0 col-lg-8 mx-auto mb-3">#}
+{#        <h3 class="py-2 text-grey">Отзывы:</h3>#}
+{#        {% for review in product.reviews.all %}#}
+{#            <span class="font-weight-bold py-2 text-grey">{{ review.author }} - {{ review.rating }}/5 - {{ review.created|date }}</span>#}
+{#            <span class="text-justify pb-2">{{ review.text }}</span>#}
+{#            <hr>#}
+{#        {% empty %}#}
+{#            <span class="pb-2">Пока нет отзывов</span>#}
+{#        {% endfor %}#}
+{#    </div>#}
 
 <!-- REWIEW MODAL WINDOW -->
 <div class="modal" id="myModal">
