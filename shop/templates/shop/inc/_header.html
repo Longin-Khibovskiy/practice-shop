@@ -5,7 +5,7 @@
         <nav class="navbar navbar-dark navbar-expand-md navigation-clean-search fixed-top bg-light">
             <div class="container">
                 <a class="navbar-brand text-dark" href="{% url 'shop:product_list' %}">
-                    <span style="color: purple"><b>OUR SHOP</b></span>
+                    <span style="color: purple"><b>KLKFL</b></span>
                 </a>
                 <button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1">
                     <span class="sr-only">Toggle navigation</span>
@@ -33,7 +33,7 @@
                     <form class="form-inline mr-auto" target="_self">
                     </form>
                     {% if request.user.is_authenticated %}
-                        <span style="color:#4169E1;">{{ user.username }} &nbsp</span>
+                        <span style="color:mediumpurple; font-weight: bolder">{{ user.username }} &nbsp</span>
                         <a class="btn btn-light action-button" role="button" href="{% url 'shop:logout' %}">Выйти</a>
                     {% else %}
                         <a class="btn btn-light action-button" role="button" href="{% url 'shop:login' %}">Войти</a>
