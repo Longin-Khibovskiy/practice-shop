@@ -2,6 +2,7 @@ from pathlib import Path
 import os
 from datetime import timedelta
 from pathlib import Path
+import jazzmin
 
 from django.contrib.messages import constants as messages
 
@@ -20,6 +21,7 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
+    'jazzmin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -34,9 +36,7 @@ INSTALLED_APPS = [
     'cart.apps.CartConfig',
     'orders.apps.OrderConfig',
 
-
 ]
-
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
@@ -112,7 +112,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 INTERNAL_IPS = [
     "127.0.0.1",
 ]
-
 
 EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
 EMAIL_FILE_PATH = 'emails/email-messages/'
