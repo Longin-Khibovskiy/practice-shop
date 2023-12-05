@@ -102,11 +102,13 @@ USE_I18N = True
 
 USE_TZ = True
 
-STATIC_URL = '/static/'  # префикс который будет добавляться к url статических файлов
-STATIC_ROOT = os.path.join(BASE_DIR,
-                           'static')  # тут хранится путь к общей папке static, в кот будут собираться все статич файлы и использоваться на боевом веб сервере-хостинге
-STATICFILES_DIRS = []  # список для нестандартных путей где искать ститичные файлы
-
+#STATIC_URL = '/static/'
+#STATIC_ROOT = os.path.join(BASE_DIR,
+#'static')  # тут хранится путь к общей папке static, в кот будут собираться все статич файлы и использоваться на боевом веб сервере-хостинге
+#STATICFILES_DIRS = []  # список для нестандартных путей где искать ститичные файлы
+STATIC_URL = '/static/'
+STATICFILES_DIRS = ( 'static', )
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 INTERNAL_IPS = [
