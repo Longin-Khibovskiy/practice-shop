@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.utils.safestring import mark_safe
 
-from .models import Product, Category, Review
+from .models import Product, Category, Review, Gallery
 
 
 class OrderReviewInline(admin.TabularInline):
@@ -14,6 +14,11 @@ class CategoryAdmin(admin.ModelAdmin):
     prepopulated_fields = {'slug': ('name',)}  # cоздание слага на основе атрибута name
 
 
+class GalleryInline(admin.TabularInline):
+    fk_name = 'product'
+    model = Gallery
+
+
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
     list_display = ['title', 'slug', 'price', 'available', 'get_html_photo']
@@ -21,7 +26,7 @@ class ProductAdmin(admin.ModelAdmin):
     list_editable = ['price', 'available']
     prepopulated_fields = {'slug': ('title',)}  # cоздание слага на основе атрибута title
     search_fields = ['title']
-    inlines = [OrderReviewInline]  # связываем отзывы с товарами
+    inlines = [GalleryInline, OrderReviewInline]  # связываем отзывы с товарами
 
     #  метод для отображения миниатюр в админке
     def get_html_photo(self, object):  # object тут ссылается на запись из таблицы (ЭК модели Product)

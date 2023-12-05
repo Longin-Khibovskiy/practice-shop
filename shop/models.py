@@ -53,10 +53,12 @@ class Product(models.Model):
             average_score = total_score / self.reviews.count()
         return round(average_score, 1)
 
-
+class Gallery(models.Model):
+    image = models.ImageField(upload_to='gallery')
+    product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='images')
 class Review(models.Model):
     """Модель отзывов."""
-    product = models.ForeignKey(Product, related_name='reviews', on_delete=models.CASCADE, verbose_name='Продукт')
+    product = models.ForeignKey(Product, related_name='reviews', on_delete=models.CASCADE, verbose_name='Товар')
     author = models.CharField(max_length=50, verbose_name='Автор')
     rating = models.IntegerField(validators=[MinValueValidator(1), MaxValueValidator(5)], verbose_name='Рейтинг')
     text = models.TextField(blank=True, verbose_name='Текст')

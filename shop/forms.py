@@ -8,7 +8,7 @@ from .models import Review
 
 class RegisterUserForm(UserCreationForm):
     """Форма регистрации пользователей"""
-    username = forms.CharField(label='Логин', widget=forms.TextInput(attrs={'class': 'form-input'}))
+    username = forms.CharField(label='Логин', widget=forms.TextInput(attrs={'class': 'form-input'}), min_length=2)
     email = forms.EmailField(label='Email', widget=forms.EmailInput(attrs={'class': 'form-input'}))
     password1 = forms.CharField(label='Пароль', widget=forms.PasswordInput(attrs={'class': 'form-input'}), min_length=8,
                                 error_messages={'min_length': 'Пароль должен быть длиной не менее 8 символов'})
@@ -36,8 +36,8 @@ class RegisterUserForm(UserCreationForm):
 
 class LoginUserForm(AuthenticationForm):
     """Форма для аутентификации потльзователей"""
-    username = forms.CharField(label='Логин', widget=forms.TextInput(attrs={'class': 'form-input'}))
-    password = forms.CharField(label='Пароль', widget=forms.PasswordInput(attrs={'class': 'form-input'}))
+    username = forms.CharField(label='E-mail или логин', widget=forms.TextInput(attrs={'class': 'form-input', 'type': 'email'}))
+    password = forms.CharField(label='Пароль', widget=forms.PasswordInput(attrs={'class': 'form-input', 'type': 'password'}))
 
 
 class FeedbackForm(forms.Form):
