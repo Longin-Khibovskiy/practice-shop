@@ -1,279 +1,261 @@
 {% load static %}
+{##}
+{##}
+{#<body>#}
+{#<!-- Navbar-->#}
+{#{% include 'shop/inc/_header.html' %}#}
+{#<!--End Navbar-->#}
+{##}
+{#<!-- Заголовок с брендом-->#}
+{#<header class="bg-dark py-5">#}
+{#    <div class="container px-4 px-lg-5 my-5">#}
+{#        <div class="text-center text-white">#}
+{#            <h1 class="display-2"><span style="color:purple"><img src="{% static 'shop/img/logo.png' %}"#}
+{#                                                                  style="width: 40%" alt=""></span></h1>#}
+{#            <p class="lead text-white-50 mb-0">Удобный и стильный образ для спорта на каждый день.</p>#}
+{#        </div>#}
+{#    </div>#}
+{#</header>#}
+{#<!-- Конец заголовка-->#}
+{##}
+{#<div id="content">#}
+{#    {% block content %}#}
+{##}
+{#    {% endblock %}#}
+{#</div>#}
+{##}
+{#<!-- Пагинация -->#}
+{#<br>#}
+{#{% if page_obj.has_other_pages %}#}
+{#    <nav aria-label="...">#}
+{#        <ul class="pagination justify-content-center">#}
+{#            {% if page_obj.has_previous %}#}
+{#                <li class="page-item">#}
+{#                    <a class="page-link" href="?page={{ page_obj.previous_page_number }}">Предыдущая</a>#}
+{#                </li>#}
+{#            {% endif %}#}
+{#            {% for p in paginator.page_range %}#}
+{#                {% if page_obj.number == p %}#}
+{#                    <li class="page-item active" aria-current="{{ p }}">#}
+{#                        <span class="page-link">{{ p }}</span>#}
+{#                    </li>#}
+{#                {% elif p >= page_obj.number|add:-2 and p <= page_obj.number|add:2 %}#}
+{#                    <li class="page-item">#}
+{#                        <a class="page-link" href="?page={{ p }}">{{ p }}</a>#}
+{#                    </li>#}
+{#                {% endif %}#}
+{#            {% endfor %}#}
+{#            {% if page_obj.has_next %}#}
+{#                <li class="page-item">#}
+{#                    <a class="page-link" href="?page={{ page_obj.next_page_number }}">Следующая</a>#}
+{#                </li>#}
+{#            {% endif %}#}
+{#        </ul>#}
+{#    </nav>#}
+{#{% endif %}#}
+{#<!-- Конец пагинации -->#}
+{##}
+{#</div>#}
+{##}
+{#<!-- Footer-->#}
+{#{% include 'shop/inc/_footer.html' %}#}
+{#<!-- End footer-->#}
+{##}
+{#<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"#}
+{#        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"#}
+{#        crossorigin="anonymous"></script>#}
+{#<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"#}
+{#        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"#}
+{#        crossorigin="anonymous"></script>#}
+{#<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"#}
+{#        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"#}
+{#        crossorigin="anonymous"></script>#}
+{#</body>#}
+{#ANOTHER BASE#}
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}My Shop{% endblock %}</title>
-    <link href="{% static 'shop/css/base.css' %}" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700">
-    <link rel="stylesheet" href="{% static 'shop/css/bootstrap.css' %}">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-          integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito&display=swap">
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>{% block title %}IPHONE 14 PRO<{% endblock %}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700&family=Jost:wght@400;500;700;900&family=Poppins:wght@400;600;700;900&display=swap"
+            rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{% static 'shop/css/normalize.css' %}"/>
+    <link rel="stylesheet" href="{% static 'shop/css/base.css' %}"/>
     <link rel="icon" href="{% static 'shop/img/img.png' %}">
 </head>
-
 <body>
-<!-- Navbar-->
-{% include 'shop/inc/_header.html' %}
-<!--End Navbar-->
-
-<!-- Заголовок с брендом-->
-<header class="bg-dark py-5">
-    <div class="container px-4 px-lg-5 my-5">
-        <div class="text-center text-white">
-            <h1 class="display-2"><span style="color:purple"><img src="{% static 'shop/img/logo.png' %}"
-                                                                  style="width: 40%" alt=""></span></h1>
-            <p class="lead text-white-50 mb-0">Удобный и стильный образ для спорта на каждый день.</p>
+<header class="header">
+    <div class="container">
+        <div class="header__top">
+            <a class="logo" href="#">
+                <img src="{% static 'shop/img/logo.png' %}" alt="" width="100px"/>
+            </a>
+            <nav class="menu">
+                <ul class="menu__list">
+                    <li class="menu__item">
+                        <a class="menu__link" href="#">Info</a>
+                    </li>
+                    <li class="menu__item">
+                        <a class="menu__link" href="#">Product</a>
+                    </li>
+                    <li class="menu__item">
+                        <a class="menu__link" href="#">Contacts</a>
+                    </li>
+                    <li class="menu__item menu__item-btn">
+                        <button class="menu__btn">BUY</button>
+                    </li>
+                </ul>
+            </nav>
         </div>
     </div>
 </header>
-<!-- Конец заголовка-->
-
-<div id="content">
+<main class="main">
+    <section class="headline">
+        <div class="container">
+            <h1 class="title">IPHONE 14 PRO</h1>
+            <img
+                    class="headline-img"
+                    src="{% static 'shop/img/iphone14_pro.png' %}"
+                    alt="IPHONE 14 PRO"
+            />
+            <a href="#" class="headline-btn">ВЫБРАТЬ</a>
+        </div>
+    </section>
+    <section class="new">
+        <div class="container">
+            <h2 class="new-title">ЧТО НОВОГО</h2>
+            <div class="new-info">
+                <div class="new-text">
+                    <p>
+                        Все модели оснащены однокристальной системой A16 Bionic,
+                        48-мегапиксельной основной камерой и экранами ProMotion с
+                        защитой Ceramic Shield и частотным диапазоном 1 — 120 Гц, а
+                        также ускоренной памятью LPDDR5. Дизайн линейки обновлен, на
+                        фронтальной панели смартфонов два выреза.
+                    </p>
+                    <p>
+                        Все iPhone 14 в США будут продаваться без лотка для SIM-карт:
+                        производитель заявляет, что улучшенная технология eSIM позволит
+                        перенести старые электронные сим-карты на новые смартфоны.
+                    </p>
+                    <p>
+                        Обновлены фронтальная камера (она снабжена автофокусом и быстрее
+                        распознает пользователя в условиях недостаточной освещенности) и
+                        сенсор основной камеры.
+                    </p>
+                    <b>
+                        iPhone 14 Pro вышел в новом дизайне — без фирменной «челки».
+                        Также в ассортименте появился новый цвет. В смартфоне, в отличие
+                        от «обычных» 14-х айфонов, установлен процессор A16 Bionic,
+                        который может за секунду производить 4 трлн операций с фото.
+                    </b>
+                </div>
+                <img
+                        class="images-new"
+                        src="{% static 'shop/img/iphone-news.jpg' %}"
+                        alt="iphone-news"
+                />
+            </div>
+        </div>
+    </section>
     {% block content %}
-
     {% endblock %}
-</div>
-
-<!-- Пагинация -->
-<br>
-{% if page_obj.has_other_pages %}
-    <nav aria-label="...">
-        <ul class="pagination justify-content-center">
-            {% if page_obj.has_previous %}
-                <li class="page-item">
-                    <a class="page-link" href="?page={{ page_obj.previous_page_number }}">Предыдущая</a>
-                </li>
-            {% endif %}
-            {% for p in paginator.page_range %}
-                {% if page_obj.number == p %}
-                    <li class="page-item active" aria-current="{{ p }}">
-                        <span class="page-link">{{ p }}</span>
-                    </li>
-                {% elif p >= page_obj.number|add:-2 and p <= page_obj.number|add:2 %}
-                    <li class="page-item">
-                        <a class="page-link" href="?page={{ p }}">{{ p }}</a>
-                    </li>
-                {% endif %}
-            {% endfor %}
-            {% if page_obj.has_next %}
-                <li class="page-item">
-                    <a class="page-link" href="?page={{ page_obj.next_page_number }}">Следующая</a>
-                </li>
-            {% endif %}
+{#    <section class="color">#}
+{#        <div class="container">#}
+{#            <h2 class="color-title">ВЫБЕРИ СВОЙ ЦВЕТ</h2>#}
+{#            <ul class="color-list">#}
+{#                <li class="color-item">#}
+{#                    <img src="images/iphone-white.jpg" alt=""/>#}
+{#                    <h3>Серебристый</h3>#}
+{#                </li>#}
+{#                <li class="color-item">#}
+{#                    <img src="images/iphone-purple.jpg" alt=""/>#}
+{#                    <h3>Фиолетовый</h3>#}
+{#                </li>#}
+{#                <li class="color-item">#}
+{#                    <img src="images/iphone-gold.jpg" alt=""/>#}
+{#                    <h3>Золотой</h3>#}
+{#                </li>#}
+{#                <li class="color-item">#}
+{#                    <img src="images/iphone-black.jpg" alt=""/>#}
+{#                    <h3>Черный</h3>#}
+{#                </li>#}
+{#            </ul>#}
+{#        </div>#}
+{#    </section>#}
+{#    <section class="color-headset">#}
+{#        <div class="container">#}
+{#            <h2 class="color-title">ВЫБЕРИ ЦВЕТ ПОД СВОЙ СТИЛЬ</h2>#}
+{#            <p class="color-text">#}
+{#                Идеальный баланс между чистотой hi‑fi и магией AirPods.#}
+{#                Непревзойденное качество персонального звучания.#}
+{#            </p>#}
+{#            <ul class="color-list">#}
+{#                <li class="color-item">#}
+{#                    <img src="images/headset-green.jpg" alt=""/>#}
+{#                    <h3>Зеленый</h3>#}
+{#                </li>#}
+{#                <li class="color-item">#}
+{#                    <img src="images/headset-blue.jpg" alt=""/>#}
+{#                    <h3>Голубое небо</h3>#}
+{#                </li>#}
+{#                <li class="color-item">#}
+{#                    <img src="images/headset-white.png" alt=""/>#}
+{#                    <h3>Серебристый</h3>#}
+{#                </li>#}
+{#                <li class="color-item">#}
+{#                    <img src="images/headset-blac.png" alt=""/>#}
+{#                    <h3>Серый космос</h3>#}
+{#                </li>#}
+{#            </ul>#}
+{#        </div>#}
+{#    </section>#}
+    <section class="audio">
+        <div class="container">
+            <div class="audio__inner">
+                <div class="audio__box">
+                    <p class="audio__text">
+                        Custom Spatial Audio with dynamic head tracking provides a
+                        surround sound experience worthy of a movie theater.
+                    </p>
+                    <p class="audio__text">
+                        Through built-in gyroscopes and accelerometers, AirPods Max and
+                        your iPhone, iPad, Mac or Apple TV detect the slightest head
+                        movements and keep the sound steady on your device.
+                    </p>
+                    <p class="audio__text">
+                        And with Apple Music, custom Spatial Audio with dynamic head
+                        tracking creates a unique three-dimensional listening
+                        experience.
+                    </p>
+                    <button class="btn">buy</button>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+<footer class="footer">
+    <div class="container">
+        <a href="#" class="footer__link">Find a retailer near you</a>
+        <p class="footer__text">
+            Or call <a href="800 207 758">800 207 758</a>
+        </p>
+        <a class="logo" href="#">
+            <img src="images/logo-white.svg" alt=""/>
+        </a>
+        <ul class="footer__list">
+            <li class="footer__item">Copyright © 2023 Apple Inc.</li>
+            <li class="footer__item">All rights reserved.</li>
+            <li class="footer__item"><a href="#"></a>Legal Notices</li>
+            <li class="footer__item"><a href="#"></a>Site Map</li>
+            <li class="footer__item"><a href="#"></a>Privacy Policy</li>
         </ul>
-    </nav>
-{% endif %}
-<!-- Конец пагинации -->
-
-</div>
-
-<!-- Footer-->
-{% include 'shop/inc/_footer.html' %}
-<!-- End footer-->
-
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
+    </div>
+</footer>
 </body>
 </html>
-{#ANOTHER BASE#}
-{#<!DOCTYPE html>
-{#<html lang="en">
-{#  <head>
-{#    <meta charset="UTF-8" />
-{#    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-{#    <title>IPHONE 14 PRO</title>
-{#    <link rel="preconnect" href="https://fonts.googleapis.com" />
-{#    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-{#    <link
-{#      href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700&family=Jost:wght@400;500;700;900&family=Poppins:wght@400;600;700;900&display=swap"
-{#      rel="stylesheet"
-{#    />
-{#    <link rel="stylesheet" href="css/normalize.css" />
-{#    <link rel="stylesheet" href="css/style.css" />
-{#  </head>
-{#  <body>
-{#    <header class="header">
-{#      <div class="container">
-{#        <div class="header__top">
-{#          <a class="logo" href="#">
-{#            <img src="images/logo.svg" alt="" />
-{#          </a>
-{#          <nav class="menu">
-{#            <ul class="menu__list">
-{#              <li class="menu__item">
-{#                <a class="menu__link" href="#">Info</a>
-{#              </li>
-{#              <li class="menu__item">
-{#                <a class="menu__link" href="#">Product</a>
-{#              </li>
-{#              <li class="menu__item">
-{#                <a class="menu__link" href="#">Contacts</a>
-{#              </li>
-{#              <li class="menu__item menu__item-btn">
-{#                <button class="menu__btn">BUY</button>
-{#              </li>
-{#            </ul>
-{#          </nav>
-{#        </div>
-{#      </div>
-{#    </header>
-{#    <main class="main">
-{#      <section class="headline">
-{#        <div class="container">
-{#          <h1 class="title">IPHONE 14 PRO</h1>
-{#          <img
-{#            class="headline-img"
-{#            src="images/iphone14_pro.png"
-{#            alt="IPHONE 14 PRO"
-{#          />
-{#          <a href="#" class="headline-btn">ВЫБРВТЬ</a>
-{#        </div>
-{#      </section>
-{#      <section class="new">
-{#        <div class="container">
-{#          <h2 class="new-title">ЧТО НОВОГО</h2>
-{#          <div class="new-info">
-{#            <div class="new-text">
-{#              <p>
-{#                Все модели оснащены однокристальной системой A16 Bionic,
-{#                48-мегапиксельной основной камерой и экранами ProMotion с
-{#                защитой Ceramic Shield и частотным диапазоном 1 — 120 Гц, а
-{#                также ускоренной памятью LPDDR5. Дизайн линейки обновлен, на
-{#                фронтальной панели смартфонов два выреза.
-{#              </p>
-{#              <p>
-{#                Все iPhone 14 в США будут продаваться без лотка для SIM-карт:
-{#                производитель заявляет, что улучшенная технология eSIM позволит
-{#                перенести старые электронные сим-карты на новые смартфоны.
-{#              </p>
-{#              <p>
-{#                Обновлены фронтальная камера (она снабжена автофокусом и быстрее
-{#                распознает пользователя в условиях недостаточной освещенности) и
-{#                сенсор основной камеры.
-{#              </p>
-{#              <b>
-{#                iPhone 14 Pro вышел в новом дизайне — без фирменной «челки».
-{#                Также в ассортименте появился новый цвет. В смартфоне, в отличие
-{#                от «обычных» 14-х айфонов, установлен процессор A16 Bionic,
-{#                который может за секунду производить 4 трлн операций с фото.
-{#              </b>
-{#            </div>
-{#            <img
-{#              class="images-new"
-{#              src="images/iphone-news.jpg"
-{#              alt="iphone-news"
-{#            />
-{#          </div>
-{#        </div>
-{#      </section>
-{#      <section class="color">
-{#        <div class="container">
-{#          <h2 class="color-title">ВЫБЕРИ СВОЙ ЦВЕТ</h2>
-{#          <ul class="color-list">
-{#            <li class="color-item">
-{#              <img src="images/iphone-white.jpg" alt="" />
-{#              <h3>Серебристый</h3>
-{#            </li>
-{#            <li class="color-item">
-{#              <img src="images/iphone-purple.jpg" alt="" />
-{#              <h3>Фиолетовый</h3>
-{#            </li>
-{#            <li class="color-item">
-{#              <img src="images/iphone-gold.jpg" alt="" />
-{#              <h3>Золотой</h3>
-{#            </li>
-{#            <li class="color-item">
-{#              <img src="images/iphone-black.jpg" alt="" />
-{#              <h3>Черный</h3>
-{#            </li>
-{#          </ul>
-{#        </div>
-{#      </section>
-{#      <section class="color-headset">
-{#        <div class="container">
-{#          <h2 class="color-title">ВЫБЕРИ ЦВЕТ ПОД СВОЙ СТИЛЬ</h2>
-{#          <p class="color-text">
-{#            Идеальный баланс между чистотой hi‑fi и магией AirPods.
-{#            Непревзойденное качество персонального звучания.
-{#          </p>
-{#          <ul class="color-list">
-{#            <li class="color-item">
-{#              <img src="images/headset-green.jpg" alt="" />
-{#              <h3>Зеленый</h3>
-{#            </li>
-{#            <li class="color-item">
-{#              <img src="images/headset-blue.jpg" alt="" />
-{#              <h3>Голубое небо</h3>
-{#            </li>
-{#            <li class="color-item">
-{#              <img src="images/headset-white.png" alt="" />
-{#              <h3>Серебристый</h3>
-{#            </li>
-{#            <li class="color-item">
-{#              <img src="images/headset-blac.png" alt="" />
-{#              <h3>Серый космос</h3>
-{#            </li>
-{#          </ul>
-{#        </div>
-{#      </section>
-{#      <section class="audio">
-{#        <div class="container">
-{#          <div class="audio__inner">
-{#            <div class="audio__box">
-{#              <p class="audio__text">
-{#                Custom Spatial Audio with dynamic head tracking provides a
-{#                surround sound experience worthy of a movie theater.
-{#              </p>
-{#              <p class="audio__text">
-{#                Through built-in gyroscopes and accelerometers, AirPods Max and
-{#                your iPhone, iPad, Mac or Apple TV detect the slightest head
-{#                movements and keep the sound steady on your device.
-{#              </p>
-{#              <p class="audio__text">
-{#                And with Apple Music, custom Spatial Audio with dynamic head
-{#                tracking creates a unique three-dimensional listening
-{#                experience.
-{#              </p>
-{#              <button class="btn">buy</button>
-{#            </div>
-{#          </div>
-{#        </div>
-{#      </section>
-{#    </main>
-{#    <footer class="footer">
-{#      <div class="container">
-{#        <a href="#" class="footer__link">Find a retailer near you</a>
-{#        <p class="footer__text">
-{#          Or call <a href="800 207 758">800 207 758</a>
-{#        </p>
-{#        <a class="logo" href="#">
-{#          <img src="images/logo-white.svg" alt="" />
-{#        </a>
-{#        <ul class="footer__list">
-{#          <li class="footer__item">Copyright © 2023 Apple Inc.</li>
-{#          <li class="footer__item">All rights reserved.</li>
-{#          <li class="footer__item"><a href="#"></a>Legal Notices</li>
-{#          <li class="footer__item"><a href="#"></a>Site Map</li>
-{#          <li class="footer__item"><a href="#"></a>Privacy Policy</li>
-{#        </ul>
-{#      </div>
-{#    </footer>
-{#  </body>
-{#</html>#}
