@@ -37,3 +37,30 @@
 .dropdown:hover .dropdown-content {display: block; border-radius: 10px; background-color: white}
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
+
+.hover-div {
+    position: relative;
+    font-size: 5rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    line-height: 80px;
+    cursor: pointer;
+}
+.logo {
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(0, 0, 0, 0.6);
+}
+.hover-logo {
+    position: absolute;
+    inset: 0;
+    width: 0;
+    color: purple;
+    overflow: hidden;
+    border-right: 6px solid purple;
+    transition: 1s ease-in-out;
+}
+.hover-div:hover .hover-logo {
+    width: 100%;
+    filter: drop-shadow(0 0 40px purple);
+
+}
