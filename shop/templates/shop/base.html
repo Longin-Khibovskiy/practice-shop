@@ -142,58 +142,7 @@
             </div>
         </div>
     </section>
-    {% block content %}
-    {% endblock %}
-    {#    <section class="color">#}
-    {#        <div class="container">#}
-    {#            <h2 class="color-title">ВЫБЕРИ СВОЙ ЦВЕТ</h2>#}
-    {#            <ul class="color-list">#}
-    {#                <li class="color-item">#}
-    {#                    <img src="images/iphone-white.jpg" alt=""/>#}
-    {#                    <h3>Серебристый</h3>#}
-    {#                </li>#}
-    {#                <li class="color-item">#}
-    {#                    <img src="images/iphone-purple.jpg" alt=""/>#}
-    {#                    <h3>Фиолетовый</h3>#}
-    {#                </li>#}
-    {#                <li class="color-item">#}
-    {#                    <img src="images/iphone-gold.jpg" alt=""/>#}
-    {#                    <h3>Золотой</h3>#}
-    {#                </li>#}
-    {#                <li class="color-item">#}
-    {#                    <img src="images/iphone-black.jpg" alt=""/>#}
-    {#                    <h3>Черный</h3>#}
-    {#                </li>#}
-    {#            </ul>#}
-    {#        </div>#}
-    {#    </section>#}
-    {#    <section class="color-headset">#}
-    {#        <div class="container">#}
-    {#            <h2 class="color-title">ВЫБЕРИ ЦВЕТ ПОД СВОЙ СТИЛЬ</h2>#}
-    {#            <p class="color-text">#}
-    {#                Идеальный баланс между чистотой hi‑fi и магией AirPods.#}
-    {#                Непревзойденное качество персонального звучания.#}
-    {#            </p>#}
-    {#            <ul class="color-list">#}
-    {#                <li class="color-item">#}
-    {#                    <img src="images/headset-green.jpg" alt=""/>#}
-    {#                    <h3>Зеленый</h3>#}
-    {#                </li>#}
-    {#                <li class="color-item">#}
-    {#                    <img src="images/headset-blue.jpg" alt=""/>#}
-    {#                    <h3>Голубое небо</h3>#}
-    {#                </li>#}
-    {#                <li class="color-item">#}
-    {#                    <img src="images/headset-white.png" alt=""/>#}
-    {#                    <h3>Серебристый</h3>#}
-    {#                </li>#}
-    {#                <li class="color-item">#}
-    {#                    <img src="images/headset-blac.png" alt=""/>#}
-    {#                    <h3>Серый космос</h3>#}
-    {#                </li>#}
-    {#            </ul>#}
-    {#        </div>#}
-    {#    </section>#}
+    {% block content %}{% endblock %}
     <section class="audio">
         <div class="container">
             <div class="audio__inner">
@@ -218,23 +167,8 @@
         </div>
     </section>
 </main>
-<footer class="footer">
-    <div class="container">
-        <a href="#" class="footer__link">Find a retailer near you</a>
-        <p class="footer__text">
-            Or call <a href="800 207 758">800 207 758</a>
-        </p>
-        <a class="logo" href="#">
-            <img src="images/logo-white.svg" alt=""/>
-        </a>
-        <ul class="footer__list">
-            <li class="footer__item">Copyright © 2023 Apple Inc.</li>
-            <li class="footer__item">All rights reserved.</li>
-            <li class="footer__item"><a href="#"></a>Legal Notices</li>
-            <li class="footer__item"><a href="#"></a>Site Map</li>
-            <li class="footer__item"><a href="#"></a>Privacy Policy</li>
-        </ul>
-    </div>
-</footer>
+<!-- Footer-->
+{% include 'shop/inc/_footer.html' %}
+<!--End Footer-->
 </body>
 </html>
