@@ -89,31 +89,10 @@
     <link rel="icon" href="{% static 'shop/img/img.png' %}">
 </head>
 <body>
-<header class="header">
-    <div class="container">
-        <div class="header__top">
-            <a class="logo" href="#">
-                <img src="{% static 'shop/img/logo.png' %}" alt="" width="100px"/>
-            </a>
-            <nav class="menu">
-                <ul class="menu__list">
-                    <li class="menu__item">
-                        <a class="menu__link" href="#">Info</a>
-                    </li>
-                    <li class="menu__item">
-                        <a class="menu__link" href="#">Product</a>
-                    </li>
-                    <li class="menu__item">
-                        <a class="menu__link" href="#">Contacts</a>
-                    </li>
-                    <li class="menu__item menu__item-btn">
-                        <button class="menu__btn">BUY</button>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-    </div>
-</header>
+<!-- Navbar-->
+{% include 'shop/inc/_header.html' %}
+<!--End Navbar-->
+
 <main class="main">
     <section class="headline">
         <div class="container">
@@ -165,56 +144,56 @@
     </section>
     {% block content %}
     {% endblock %}
-{#    <section class="color">#}
-{#        <div class="container">#}
-{#            <h2 class="color-title">ВЫБЕРИ СВОЙ ЦВЕТ</h2>#}
-{#            <ul class="color-list">#}
-{#                <li class="color-item">#}
-{#                    <img src="images/iphone-white.jpg" alt=""/>#}
-{#                    <h3>Серебристый</h3>#}
-{#                </li>#}
-{#                <li class="color-item">#}
-{#                    <img src="images/iphone-purple.jpg" alt=""/>#}
-{#                    <h3>Фиолетовый</h3>#}
-{#                </li>#}
-{#                <li class="color-item">#}
-{#                    <img src="images/iphone-gold.jpg" alt=""/>#}
-{#                    <h3>Золотой</h3>#}
-{#                </li>#}
-{#                <li class="color-item">#}
-{#                    <img src="images/iphone-black.jpg" alt=""/>#}
-{#                    <h3>Черный</h3>#}
-{#                </li>#}
-{#            </ul>#}
-{#        </div>#}
-{#    </section>#}
-{#    <section class="color-headset">#}
-{#        <div class="container">#}
-{#            <h2 class="color-title">ВЫБЕРИ ЦВЕТ ПОД СВОЙ СТИЛЬ</h2>#}
-{#            <p class="color-text">#}
-{#                Идеальный баланс между чистотой hi‑fi и магией AirPods.#}
-{#                Непревзойденное качество персонального звучания.#}
-{#            </p>#}
-{#            <ul class="color-list">#}
-{#                <li class="color-item">#}
-{#                    <img src="images/headset-green.jpg" alt=""/>#}
-{#                    <h3>Зеленый</h3>#}
-{#                </li>#}
-{#                <li class="color-item">#}
-{#                    <img src="images/headset-blue.jpg" alt=""/>#}
-{#                    <h3>Голубое небо</h3>#}
-{#                </li>#}
-{#                <li class="color-item">#}
-{#                    <img src="images/headset-white.png" alt=""/>#}
-{#                    <h3>Серебристый</h3>#}
-{#                </li>#}
-{#                <li class="color-item">#}
-{#                    <img src="images/headset-blac.png" alt=""/>#}
-{#                    <h3>Серый космос</h3>#}
-{#                </li>#}
-{#            </ul>#}
-{#        </div>#}
-{#    </section>#}
+    {#    <section class="color">#}
+    {#        <div class="container">#}
+    {#            <h2 class="color-title">ВЫБЕРИ СВОЙ ЦВЕТ</h2>#}
+    {#            <ul class="color-list">#}
+    {#                <li class="color-item">#}
+    {#                    <img src="images/iphone-white.jpg" alt=""/>#}
+    {#                    <h3>Серебристый</h3>#}
+    {#                </li>#}
+    {#                <li class="color-item">#}
+    {#                    <img src="images/iphone-purple.jpg" alt=""/>#}
+    {#                    <h3>Фиолетовый</h3>#}
+    {#                </li>#}
+    {#                <li class="color-item">#}
+    {#                    <img src="images/iphone-gold.jpg" alt=""/>#}
+    {#                    <h3>Золотой</h3>#}
+    {#                </li>#}
+    {#                <li class="color-item">#}
+    {#                    <img src="images/iphone-black.jpg" alt=""/>#}
+    {#                    <h3>Черный</h3>#}
+    {#                </li>#}
+    {#            </ul>#}
+    {#        </div>#}
+    {#    </section>#}
+    {#    <section class="color-headset">#}
+    {#        <div class="container">#}
+    {#            <h2 class="color-title">ВЫБЕРИ ЦВЕТ ПОД СВОЙ СТИЛЬ</h2>#}
+    {#            <p class="color-text">#}
+    {#                Идеальный баланс между чистотой hi‑fi и магией AirPods.#}
+    {#                Непревзойденное качество персонального звучания.#}
+    {#            </p>#}
+    {#            <ul class="color-list">#}
+    {#                <li class="color-item">#}
+    {#                    <img src="images/headset-green.jpg" alt=""/>#}
+    {#                    <h3>Зеленый</h3>#}
+    {#                </li>#}
+    {#                <li class="color-item">#}
+    {#                    <img src="images/headset-blue.jpg" alt=""/>#}
+    {#                    <h3>Голубое небо</h3>#}
+    {#                </li>#}
+    {#                <li class="color-item">#}
+    {#                    <img src="images/headset-white.png" alt=""/>#}
+    {#                    <h3>Серебристый</h3>#}
+    {#                </li>#}
+    {#                <li class="color-item">#}
+    {#                    <img src="images/headset-blac.png" alt=""/>#}
+    {#                    <h3>Серый космос</h3>#}
+    {#                </li>#}
+    {#            </ul>#}
+    {#        </div>#}
+    {#    </section>#}
     <section class="audio">
         <div class="container">
             <div class="audio__inner">
