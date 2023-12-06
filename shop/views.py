@@ -27,7 +27,7 @@ class ShopHome(DataMixin, ListView):
         """Добавляем для оптимизации нагрузки на БД. Благодаря методу select_related у нас происходит
         жадная, а не ленивая загрузка связанных данных  по внешнему FK. В моем случае я уменьшаю количество запросов
         по категориям на главной странице с 11 до 5 (так как в каждом товаре указывается категория)."""
-        return Product.objects.all().select_related('category')
+        return Product.objects.all().select_related('category')[4:]
 
 
 class ProductDetailView(DataMixin, DetailView):

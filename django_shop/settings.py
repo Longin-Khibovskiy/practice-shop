@@ -107,7 +107,7 @@ USE_TZ = True
 #'static')  # тут хранится путь к общей папке static, в кот будут собираться все статич файлы и использоваться на боевом веб сервере-хостинге
 #STATICFILES_DIRS = []  # список для нестандартных путей где искать ститичные файлы
 STATIC_URL = '/static/'
-STATICFILES_DIRS = ('static',)
+STATICFILES_DIRS = ('shop/static',)
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
