@@ -15,7 +15,7 @@ logger.add("debug.log", format="{time} {level} {message}", level="DEBUG", rotati
 
 class ShopHome(DataMixin, ListView):
     model = Product
-    template_name = 'shop/product/list.html'
+    template_name = 'shop/base.html'
     context_object_name = 'products'
 
     def get_context_data(self, *, object_list=None, **kwargs):
@@ -27,7 +27,7 @@ class ShopHome(DataMixin, ListView):
         """Добавляем для оптимизации нагрузки на БД. Благодаря методу select_related у нас происходит
         жадная, а не ленивая загрузка связанных данных  по внешнему FK. В моем случае я уменьшаю количество запросов
         по категориям на главной странице с 11 до 5 (так как в каждом товаре указывается категория)."""
-        return Product.objects.all().select_related('category')[4:]
+        return Product.objects.all().select_related('category')
 
 
 class ProductDetailView(DataMixin, DetailView):
@@ -71,7 +71,7 @@ class ShopCategory(DataMixin, ListView):
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['title'] = 'Категория - ' + str(context['products'][0].category).upper()
+        context['title'] = str(context['products'][0].category).upper()
         return dict(list(context.items()))
 
     def get_queryset(self):

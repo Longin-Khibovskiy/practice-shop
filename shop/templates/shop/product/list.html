@@ -1,76 +1,31 @@
-{% extends "shop/base.html" %}
-{% load static %}
-{% block title %}
-    {{ title }}
-{% endblock %}
+{#{% extends "shop/base.html" %}#}
 
+{% load static %}
+<link rel="stylesheet" href="{% static 'shop/css/normalize.css' %}"/>
+<link rel="stylesheet" href="{% static 'shop/css/base.css' %}"/>
+<link rel="icon" href="{% static 'shop/img/img.png' %}">
+{% include 'shop/inc/_header.html' %}
 {% block content %}
-    <section class="headline">
+    {% if title == 'АЙФОНЫ' %}
+    <section class="color">
         <div class="container">
-            <h1 class="title" style="filter: drop-shadow(0 0 25px mediumpurple);">IPHONE 14 PRO</h1>
-            <img
-                    class="headline-img"
-                    src="{% static 'shop/img/iphone14_pro.png' %}"
-                    alt="IPHONE 14 PRO"
-            />
-            <a href="#" class="headline-btn">ВЫБРАТЬ</a>
-        </div>
-    </section>
-    <section class="new">
-        <div class="container">
-            <h2 class="new-title">ЧТО НОВОГО</h2>
-            <div class="new-info">
-                <div class="new-text">
-                    <p>
-                        Все модели оснащены однокристальной системой A16 Bionic,
-                        48-мегапиксельной основной камерой и экранами ProMotion с
-                        защитой Ceramic Shield и частотным диапазоном 1 — 120 Гц, а
-                        также ускоренной памятью LPDDR5. Дизайн линейки обновлен, на
-                        фронтальной панели смартфонов два выреза.
-                    </p>
-                    <p>
-                        Все iPhone 14 в США будут продаваться без лотка для SIM-карт:
-                        производитель заявляет, что улучшенная технология eSIM позволит
-                        перенести старые электронные сим-карты на новые смартфоны.
-                    </p>
-                    <p>
-                        Обновлены фронтальная камера (она снабжена автофокусом и быстрее
-                        распознает пользователя в условиях недостаточной освещенности) и
-                        сенсор основной камеры.
-                    </p>
-                    <b>
-                        iPhone 14 Pro вышел в новом дизайне — без фирменной «челки».
-                        Также в ассортименте появился новый цвет. В смартфоне, в отличие
-                        от «обычных» 14-х айфонов, установлен процессор A16 Bionic,
-                        который может за секунду производить 4 трлн операций с фото.
-                    </b>
-                </div>
-                <img
-                        class="images-new"
-                        src="{% static 'shop/img/iphone-news.jpg' %}"
-                        alt="iphone-news"
-                />
+            <h2 class="color-title">{% block title %}{{ title }}{% endblock %}</h2>
+            <h2 class="color-title">ВЫБЕРИ СВОЙ ЦВЕТ</h2>
+            <div class="color-list">
+                {#            Сделать вывод только наушников#}
+                {% for product in products %}
+                    <div class="color-item">
+                        <a href="{{ product.get_absolute_url }}">{{ product.name }}
+                            <img src="
+
+                                    {% if product.image %}{{ product.image.url }}{% else %}{% static 'shop/img/no_image.png' %}{% endif %}">
+                        </a>
+                        <a href="{{ product.get_absolute_url }}">{{ product.name }}</a>
+                    </div>
+                {% endfor %}
             </div>
         </div>
-    </section>
-    <section class="color">
-
-        <div class="container">
-            <h2 class="color-title">ВЫБЕРИ СВОЙ ЦВЕТ</h2>
-            <ul class="color-list">
-{#            Сделать вывод только наушников#}
-                    {% for product in products %}
-                        <li class="color-item">
-                            <a href="{{ product.get_absolute_url }}">{{ product.name }}
-                                <img src="
-                                        {% if product.image %}{{ product.image.url }}{% else %}{% static 'shop/img/no_image.png' %}{% endif %}">
-                            </a>
-                            <a href="{{ product.get_absolute_url }}">{{ product.name }}</a>
-                        </li>
-                    {% endfor %}
-            </ul>
-        </div>
-
+{% else %}
     </section>
     <section class="color-headset">
         <div class="container">
@@ -79,24 +34,19 @@
                 Идеальный баланс между чистотой hi‑fi и магией AirPods.
                 Непревзойденное качество персонального звучания.
             </p>
-            <ul class="color-list">
-                <li class="color-item">
-                    <img src="images/headset-green.jpg" alt=""/>
-                    <h3>Зеленый</h3>
-                </li>
-                <li class="color-item">
-                    <img src="images/headset-blue.jpg" alt=""/>
-                    <h3>Голубое небо</h3>
-                </li>
-                <li class="color-item">
-                    <img src="images/headset-white.png" alt=""/>
-                    <h3>Серебристый</h3>
-                </li>
-                <li class="color-item">
-                    <img src="images/headset-blac.png" alt=""/>
-                    <h3>Серый космос</h3>
-                </li>
-            </ul>
+            <div class="color-list">
+                {% for product in products %}
+                    <div class="color-item">
+                        <a href="{{ product.get_absolute_url }}">{{ product.name }}
+                            <img src="
+
+                                    {% if product.image %}{{ product.image.url }}{% else %}{% static 'shop/img/no_image.png' %}{% endif %}">
+                        </a>
+                        <a href="{{ product.get_absolute_url }}">{{ product.name }}</a>
+                    </div>
+                {% endfor %}
+            </div>
         </div>
     </section>
+    {% endif %}
 {% endblock %}
