@@ -16,3 +16,8 @@
   gap: 20px;
   flex-wrap: wrap;
 }
+.name_hub {
+  background: linear-gradient(75deg, purple, #a000ff, red);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}
