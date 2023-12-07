@@ -176,6 +176,10 @@
             </div>
         </div>
         <section class="choose-color">
+            {% if product.available %}
+            {% else %}
+                <div style="color: red; font-weight: bolder; font-size: x-large">Временно недоступен</div>
+            {% endif %}
             <div class="container">
                 <h3 class="choose-color__title">Choose your colour</h3>
                 <p class="choose-color__text">
