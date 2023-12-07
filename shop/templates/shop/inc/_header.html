@@ -21,7 +21,7 @@
                         </div>
                     </li>
                     <li class="menu__item">
-                        <a class="menu__link" href="#">Product</a>
+                        <a class="menu__link" href="{% url 'shop:catalog' %}">Catalog</a>
                     </li>
                     <li class="menu__item">
                         {% if request.user.is_authenticated %}

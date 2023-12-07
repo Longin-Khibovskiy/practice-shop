@@ -140,3 +140,8 @@ def about(request):
 def logout_user(request):
     logout(request)  # стандартная ф-ия Джанго для выхода из авторизации
     return redirect('shop:login')
+
+
+def catalog(request):
+    prod = Product.objects.all()
+    return render(request, 'shop/product/catalog.html', {'prod': prod})
