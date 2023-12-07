@@ -40,6 +40,7 @@ class ProductDetailView(DataMixin, DetailView):
         context['category'] = get_object_or_404(Category, slug=self.kwargs['category_slug'])
         context['review_form'] = ReviewForm()
         context['cart_product_form'] = CartAddProductForm()
+        context['gallery_images'] = self.object.images.all()
         context = self.get_user_context(**context)
         return context
 
