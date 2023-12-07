@@ -37,7 +37,10 @@ class ProductDetailView(DataMixin, DetailView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
+        category = get_object_or_404(Category, slug=self.kwargs['category_slug'])
+        other_products = Product.objects.filter(category=category).exclude(pk=self.object.pk)[:5]
         context['category'] = get_object_or_404(Category, slug=self.kwargs['category_slug'])
+        context['other_products'] = other_products
         context['review_form'] = ReviewForm()
         context['cart_product_form'] = CartAddProductForm()
         context['gallery_images'] = self.object.images.all()

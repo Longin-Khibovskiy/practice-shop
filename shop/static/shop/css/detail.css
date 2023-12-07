@@ -121,7 +121,7 @@ body {
   z-index: -1;
 } */
 .choose-color {
-  padding: 45px 0 180px;
+  padding: 0 0 50px;
   text-align: center;
 }
 .choose-color__title {
