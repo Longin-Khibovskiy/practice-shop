@@ -177,6 +177,20 @@
         </div>
         <section class="choose-color">
             {% if product.available %}
+                <form action="{% url 'cart:cart_add' product.id %}" method="post" class="buy_from">
+                    {% csrf_token %}
+                    <span class="input-group add-to-cart shadow-custom">
+                                <div class="input-group-prepend">
+                                    <span class="price">₽ {{ product.price }}</span>
+                                </div><br>
+                                {{ cart_product_form.quantity }}
+                                <div>
+                                    <button class="button type1" type="submit" title="Add to cart"><span
+                                            class="btn-txt">BUY</span>
+                                    </button>
+                                </div>
+                            </span>
+                </form>
             {% else %}
                 <div style="color: red; font-weight: bolder; font-size: x-large">Временно недоступен</div>
             {% endif %}
