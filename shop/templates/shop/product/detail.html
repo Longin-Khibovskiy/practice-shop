@@ -1,7 +1,9 @@
-{% extends "shop/base.html" %}
-
 {% load static %}
-
+{% load static %}
+<link rel="stylesheet" href="{% static 'shop/css/normalize.css' %}"/>
+<link rel="stylesheet" href="{% static 'shop/css/base.css' %}"/>
+<link rel="icon" href="{% static 'shop/img/img.png' %}">
+{% include 'shop/inc/_header.html' %}
 {% block title %}
     {{ product.category }}: {{ product.title }}
 {% endblock %}

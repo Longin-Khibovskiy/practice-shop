@@ -161,7 +161,7 @@ body {
 
 .audio {
     /* position: relative; */
-    background-image: url(../images/audio-full.jpg);
+    background-image: url("https://www.apple.com/v/airpods-max/f/images/overview/audio_quality_spatial_figure__clxltt2m0z2a_large_2x.jpg");
     background-repeat: no-repeat;
     background-position: top center;
     background-size: cover;

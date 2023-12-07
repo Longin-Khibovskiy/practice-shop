@@ -7,46 +7,51 @@
 {% include 'shop/inc/_header.html' %}
 {% block content %}
     {% if title == 'АЙФОНЫ' %}
-    <section class="color">
-        <div class="container">
-            <h2 class="color-title">{% block title %}{{ title }}{% endblock %}</h2>
-            <h2 class="color-title">ВЫБЕРИ СВОЙ ЦВЕТ</h2>
-            <div class="color-list">
-                {#            Сделать вывод только наушников#}
-                {% for product in products %}
-                    <div class="color-item">
-                        <a href="{{ product.get_absolute_url }}">{{ product.name }}
-                            <img src="
+        <section class="color">
+            <div class="container">
+                <h2 class="color-title">{% block title %}{{ title }}{% endblock %}</h2>
+                <h2 class="color-title">ВЫБЕРИ СВОЙ ЦВЕТ</h2>
+                <div class="color-list">
+                    {#            Сделать вывод только наушников#}
+                    {% for product in products %}
+                        <div class="color-item">
+                            <a href="{{ product.get_absolute_url }}">{{ product.name }}
+                                <img src="
 
-                                    {% if product.image %}{{ product.image.url }}{% else %}{% static 'shop/img/no_image.png' %}{% endif %}">
-                        </a>
-                        <a href="{{ product.get_absolute_url }}">{{ product.name }}</a>
-                    </div>
-                {% endfor %}
-            </div>
-        </div>
-{% else %}
-    </section>
-    <section class="color-headset">
-        <div class="container">
-            <h2 class="color-title">ВЫБЕРИ ЦВЕТ ПОД СВОЙ СТИЛЬ</h2>
-            <p class="color-text">
-                Идеальный баланс между чистотой hi‑fi и магией AirPods.
-                Непревзойденное качество персонального звучания.
-            </p>
-            <div class="color-list">
-                {% for product in products %}
-                    <div class="color-item">
-                        <a href="{{ product.get_absolute_url }}">{{ product.name }}
-                            <img src="
 
-                                    {% if product.image %}{{ product.image.url }}{% else %}{% static 'shop/img/no_image.png' %}{% endif %}">
-                        </a>
-                        <a href="{{ product.get_absolute_url }}">{{ product.name }}</a>
-                    </div>
-                {% endfor %}
+
+                                        {% if product.image %}{{ product.image.url }}{% else %}{% static 'shop/img/no_image.png' %}{% endif %}">
+                            </a>
+                            <a href="{{ product.get_absolute_url }}">{{ product.name }}</a>
+                        </div>
+                    {% endfor %}
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+    {% else %}
+        <section class="color-headset">
+            <div class="container">
+                <h2 class="color-title">ВЫБЕРИ ЦВЕТ ПОД СВОЙ СТИЛЬ</h2>
+                <p class="color-text">
+                    Идеальный баланс между чистотой hi‑fi и магией AirPods.
+                    Непревзойденное качество персонального звучания.
+                </p>
+                <div class="color-list">
+                    {% for product in products %}
+                        <div class="color-item">
+                            <a href="{{ product.get_absolute_url }}">{{ product.name }}
+                                <img src="
+
+
+
+                                        {% if product.image %}{{ product.image.url }}{% else %}{% static 'shop/img/no_image.png' %}{% endif %}">
+                            </a>
+                            <a href="{{ product.get_absolute_url }}">{{ product.name }}</a>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
     {% endif %}
+    {% include 'shop/inc/_footer.html' %}
 {% endblock %}
