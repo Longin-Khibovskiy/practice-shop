@@ -354,7 +354,17 @@
             </section>
         </main>
     {% elif category.name == 'Айфоны' %}
-
+    {% if gallery_images %}
+<img
+                                    class="content-item color--red content-item__active"
+                                    src="{{ gallery_images.last.image.url }}"
+                                    alt=""
+                            /><img
+                                    class="content-item color--red content-item__active"
+                                    src="{{ gallery_images.first.image.url }}"
+                                    alt=""
+                            />
+        {% endif %}
     {% endif %}
     {% include 'shop/inc/_footer.html' %}
 {% endblock %}
