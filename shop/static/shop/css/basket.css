@@ -4,3 +4,368 @@
     display: flex;
     justify-content: center;
 }
+
+.cart_ol {
+    list-style: none;
+    margin: 4rem 0 20px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 100%;
+}
+
+.item-info {
+    margin-bottom: 78px;
+    padding-bottom: 76px;
+    border-bottom: 1px solid #e7e7e7;
+}
+
+.large-3 {
+    flex-basis: 50%;
+    max-width: 50%;
+}
+
+.large-6 {
+    flex-basis: 50%;
+    max-width: 50%;
+}
+
+.large-9 {
+    flex-basis: 40%;
+    max-width: 75%;
+}
+
+.large-last {
+    margin-left: auto;
+}
+
+.large-offset-3 {
+    margin-left: 25%;
+}
+
+.column {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    min-width: 0;
+}
+
+.item-info-image {
+    width: 203px;
+    text-align: center;
+}
+
+.item-info-image img {
+    max-width: 203px;
+    max-height: 203px;
+    width: auto;
+    height: auto;
+    float: none;
+}
+
+.item-info-details {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+}
+
+.item-info-title {
+    padding-right: 20px;
+    box-sizing: border-box;
+}
+
+.item-info-count {
+    width: 14%;
+}
+
+.item-info-price {
+    width: 36%;
+}
+
+.item-info-title-details, .item-info-price-details {
+    font-size: 24px;
+    line-height: 1.16667;
+    font-weight: 600;
+    color: #000000;
+}
+
+.item-info-count {
+    width: 14%;
+}
+
+.quantity {
+    padding-left: 19px;
+    margin-top: -2px;
+}
+
+.quantity-selector .quantity-wrapper {
+    display: inline-block;
+    position: relative;
+    font-size: x-large;
+    font-weight: bold;
+}
+
+.form-dropdown {
+    position: relative;
+    margin-bottom: 0.82353rem;
+}
+
+.item-info-price-details {
+    padding-left: 0.58824rem;
+    text-align: right;
+}
+
+.summary {
+    width: 75%;
+    text-align: center;
+
+}
+
+.summary-content {
+    margin-bottom: 5px;
+}
+
+.summary-labelandvaluecontainer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.summary-value {
+    text-align: right;
+    padding-left: 20px;
+}
+
+.summary-label, .summary-value {
+    font-size: 17px;
+    line-height: 1.47;
+    font-weight: 400;
+    letter-spacing: -.022em;
+}
+
+.summary-installmentsamountdue, .summary-total {
+    border-top: 1px solid #d2d2d7;
+    margin-top: 16px;
+    padding-top: 19px;
+}
+
+.summary-label {
+    z-index: 2;
+    padding-right: 20px;
+}
+
+.buy {
+    text-align: center;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.button-div {
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+}
+
+/*КНОПКА ОФОРМИТ ЗАКАЗ*/
+.button {
+    --width: 200px;
+    --height: 50px;
+    --tooltip-height: 45px;
+    --tooltip-width: 150px;
+    --gap-between-tooltip-to-button: 18px;
+    --button-color: #222;
+    --tooltip-color: #fff;
+    width: var(--width);
+    height: var(--height);
+    background: var(--button-color);
+    position: relative;
+    text-align: center;
+    border-radius: 0.6em;
+    font-family: "Arial";
+    transition: background 0.3s;
+}
+
+.button::before {
+    position: absolute;
+    content: attr(data-tooltip);
+    width: var(--tooltip-width);
+    height: var(--tooltip-height);
+    background-color: #555;
+    font-size: 0.9rem;
+    color: #fff;
+    border-radius: .25em;
+    line-height: var(--tooltip-height);
+    bottom: calc(var(--height) + var(--gap-between-tooltip-to-button) + 10px);
+    left: calc(50% - var(--tooltip-width) / 2);
+}
+
+.button::after {
+    position: absolute;
+    content: '';
+    width: 0;
+    height: 0;
+    border: 10px solid transparent;
+    border-top-color: #555;
+    left: calc(50% - 10px);
+    bottom: calc(100% + var(--gap-between-tooltip-to-button) - 10px);
+}
+
+.button::after, .button::before {
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s;
+}
+
+.text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button-wrapper, .text, .icon {
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    color: #fff;
+}
+
+.text {
+    top: 0
+}
+
+.text, .icon {
+    transition: top 0.5s;
+}
+
+.icon {
+    color: #fff;
+    top: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon svg {
+    width: 24px;
+    height: 24px;
+}
+
+.button:hover {
+    background: #222;
+}
+
+.button:hover .text {
+    top: -100%;
+}
+
+.button:hover .icon {
+    top: 0;
+}
+
+.button:hover:before, .button:hover:after {
+    opacity: 1;
+    visibility: visible;
+}
+
+.button:hover:after {
+    bottom: calc(var(--height) + var(--gap-between-tooltip-to-button) - 20px);
+}
+
+.button:hover:before {
+    bottom: calc(var(--height) + var(--gap-between-tooltip-to-button));
+}
+
+.button-back {
+    display: flex;
+    height: 3em;
+    width: 150px;
+    align-items: center;
+    justify-content: center;
+    background-color: #eeeeee4b;
+    border-radius: .60em;
+    letter-spacing: 1px;
+    transition: all 0.2s linear;
+    cursor: pointer;
+    border: none;
+    background: #fff;
+}
+
+.button-back > svg {
+    margin-right: 5px;
+    margin-left: 5px;
+    font-size: 20px;
+    transition: all 0.4s ease-in;
+}
+
+.button-back:hover > svg {
+    font-size: 1.2em;
+    transform: translateX(-5px);
+}
+
+.button-back:hover {
+    box-shadow: 9px 9px 33px #d1d1d1, -9px -9px 33px #ffffff;
+    transform: translateY(-2px);
+}
+
+.button-delete {
+    margin-top: 25px;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: rgb(20, 20, 20);
+    border: none;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.164);
+    cursor: pointer;
+    transition-duration: .3s;
+    overflow: hidden;
+    position: relative;
+}
+
+.svgIcon {
+    width: 12px;
+    transition-duration: .3s;
+}
+
+.svgIcon path {
+    fill: white;
+}
+
+.button-delete:hover {
+    width: 140px;
+    border-radius: 50px;
+    transition-duration: .3s;
+    background-color: rgb(255, 69, 69);
+    align-items: center;
+}
+
+.button-delete:hover .svgIcon {
+    width: 50px;
+    transition-duration: .3s;
+    transform: translateY(60%);
+}
+
+.button-delete::before {
+    position: absolute;
+    top: -20px;
+    content: "Delete";
+    color: white;
+    transition-duration: .3s;
+    font-size: 2px;
+}
+
+.button-delete:hover::before {
+    font-size: 13px;
+    opacity: 1;
+    transform: translateY(30px);
+    transition-duration: .3s;
+}

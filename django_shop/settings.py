@@ -3,6 +3,7 @@ import os
 from datetime import timedelta
 from pathlib import Path
 import jazzmin
+import humanize
 
 from django.contrib.messages import constants as messages
 
@@ -28,6 +29,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.humanize',
 
     'captcha',
     'crispy_forms',
