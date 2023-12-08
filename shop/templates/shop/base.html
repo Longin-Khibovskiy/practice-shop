@@ -96,11 +96,11 @@
 {% endblock %}
 <section class="headline">
     <div class="container">
-        <h1 class="title" style="filter: drop-shadow(0 0 25px mediumpurple);">IPHONE 14 PRO</h1>
+        <h1 class="title" style="filter: drop-shadow(0 0 25px #d3a247);">IPHONE 15 PRO</h1>
         <img
                 class="headline-img"
-                src="{% static 'shop/img/iphone14_pro.png' %}"
-                alt="IPHONE 14 PRO"
+                src="{% static 'shop/img/Iphones_15.png' %}"
+                alt="IPHONE 15 PRO" width="100%"
         />{% for i in categories %}{% if i.name == 'Айфоны' %}
         <a href="{{ i.get_absolute_url }}" class="headline-btn">ВЫБРАТЬ</a>{% endif %}{% endfor %}
     </div>
@@ -136,8 +136,9 @@
             </div>
             <img
                     class="images-new"
-                    src="{% static 'shop/img/iphone-news.jpg' %}"
+                    src="{% static 'shop/img/ipgone_new.png' %}"
                     alt="iphone-news"
+                    width="40%"
             />
         </div>
     </div>
