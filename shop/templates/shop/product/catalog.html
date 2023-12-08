@@ -4,7 +4,7 @@
 <link rel="icon" href="{% static 'shop/img/img.png' %}">
 {% include 'shop/inc/_header.html' %}
 {% block content %}
-    <h1>Каталог товаров</h1>
+    <h1 style="text-align: center; padding-bottom: 60px; font-size: 60px; font-family: Palatino;">Каталог товаров</h1>
     <section class="color">
         <div class="container">
             <div class="color-list">
@@ -12,9 +12,6 @@
                     <div class="color-item">
                         <a href="{{ prod.get_absolute_url }}">
                             <img class="color_img" src="
-
-
-
                                     {% if prod.image %}{{ prod.image.url }}{% else %}{% static 'shop/img/no_image.png' %}{% endif %}"></a>
                     <span style="display: flex; justify-content: center; margin-top: -10px">{{ prod.title }}</span>
                     </div>

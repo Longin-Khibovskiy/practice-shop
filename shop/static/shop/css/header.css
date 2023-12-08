@@ -18,7 +18,7 @@
     display: none;
     position: absolute;
     min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
 }
 
@@ -31,10 +31,17 @@
 }
 
 /* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: #f3f3f3; border-radius: 10px}
+.dropdown-content a:hover {
+    background-color: #f3f3f3;
+    border-radius: 10px
+}
 
 /* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {display: block; border-radius: 10px; background-color: white}
+.dropdown:hover .dropdown-content {
+    display: block;
+    border-radius: 10px;
+    background-color: white
+}
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
 
@@ -46,10 +53,12 @@
     line-height: 80px;
     cursor: pointer;
 }
+
 .logo {
     color: transparent;
     -webkit-text-stroke: 1px rgba(0, 0, 0, 0.6);
 }
+
 .hover-logo {
     position: absolute;
     inset: 0;
@@ -60,7 +69,51 @@
     transition: 1s ease-in-out;
     filter: drop-shadow(0 0 40px purple);
 }
+
 .hover-div:hover .hover-logo {
     width: 100%;
     filter: drop-shadow(0 0 40px purple);
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    background-color: #0e0e0e;
+    color: #f1f1f1;
+    padding: 1em 3em;
+    border-radius: 3em;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 200px;
+    background-color: rgba(31, 31, 31, 0.09);
+    color: #282828;
+    text-align: center;
+    border-radius: 5px;
+    padding: 10px;
+    position: absolute;
+    z-index: 1;
+    bottom: -125%;
+    left: 50%;
+    transform: translate(-50%, -40%);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    border-width: 8px;
+    border-style: solid;
+    border-color: #28282817 transparent;
+    transform: translate(-50%, -344%);
 }

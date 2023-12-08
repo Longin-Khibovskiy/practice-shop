@@ -25,17 +25,18 @@
                     </li>
                     <li class="menu__item">
                         {% if request.user.is_authenticated %}
-                        <a class="menu__link" role="button" href="{% url 'shop:logout' %}">Выйти</a>
-                    {% else %}
-                        <a class="menu__link" role="button" href="{% url 'shop:login' %}">Войти</a>
-                        &nbsp
-                        <a class="menu__link" role="button" href="{% url 'shop:register' %}">Зарегистрироваться</a>
-                    {% endif %}
+                            <a class="menu__link" role="button" href="{% url 'shop:logout' %}">Выйти</a>
+                        {% else %}
+                            <a class="menu__link" role="button" href="{% url 'shop:login' %}">Войти</a>
+                            &nbsp
+                            <a class="menu__link" role="button" href="{% url 'shop:register' %}">Зарегистрироваться</a>
+                        {% endif %}
                     </li>
-
                     <li class="menu__item menu__item-btn">
-                        <a href="{% url 'cart:cart_detail' %}" class="menu__btn">BASKET</a>
-                        <span id="cart_price">{{ cart_total_price }}</span>&nbsp;₽
+                        <a class="tooltip" href="{% url 'cart:cart_detail' %}">
+                            BASKET
+                            <div class="tooltiptext">₽ {{ cart_total_price }}</div>
+                        </a>
                     </li>
                 </ul>
             </nav>
