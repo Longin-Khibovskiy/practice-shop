@@ -3,6 +3,7 @@
 <link rel="stylesheet" href="{% static 'shop/css/header.css' %}"/>
 <link rel="stylesheet" href="{% static 'shop/css/detail.css' %}"/>
 <link rel="icon" href="{% static 'shop/img/img.png' %}">
+<title>{% block title %}О товаре{% endblock %}</title>
 {% include 'shop/inc/_header.html' %}
 {% block content %}
     {% if category.name == 'Наушники' %}

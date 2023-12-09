@@ -11,7 +11,7 @@
                 <ul class="menu__list">
                     <li class="menu__item">
                         <div class="dropdown">
-                            <button class="dropbtn">Category
+                            <button class="dropbtn">Категории
                             </button>
                             <div class="dropdown-content">
                                 {% for i in categories %}
@@ -21,7 +21,7 @@
                         </div>
                     </li>
                     <li class="menu__item">
-                        <a class="menu__link" href="{% url 'shop:catalog' %}">Catalog</a>
+                        <a class="menu__link" href="{% url 'shop:catalog' %}">Каталог</a>
                     </li>
                     <li class="menu__item">
                         {% if request.user.is_authenticated %}
@@ -34,7 +34,7 @@
                     </li>
                     <li class="menu__item menu__item-btn">
                         <a class="tooltip" href="{% url 'cart:cart_detail' %}">
-                            BASKET
+                            КОРЗИНА
                             <div class="tooltiptext">₽ {{ cart_total_price }}</div>
                         </a>
                     </li>
