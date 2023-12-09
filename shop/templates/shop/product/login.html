@@ -1,31 +1,152 @@
-{% extends "shop/base.html" %}
+{% load static %}
+{% load humanize %}
+<link rel="stylesheet" href="{% static 'shop/css/normalize.css' %}"/>
+<link rel="stylesheet" href="{% static 'shop/css/detail.css' %}"/>
+<link rel="icon" href="{% static 'shop/img/img.png' %}">
+<style>
+    body {
+        background-color: #efefef;
+        text-align: center;
+    }
 
-{% block title %}
-    {{ title }}
-{% endblock %}
+    h1 {
+        text-align: center;
+    }
+
+    ::placeholder {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+
+    form {
+        width: 100%;
+        align-content: center;
+        text-align: center;
+    }
+
+    .form-input {
+        margin-left: 10px;
+        border-radius: 10px;
+        border: none;
+        width: 100%;
+        height: 100%;
+    }
+
+    .form-input:focus {
+        outline: none;
+    }
+
+    .inputForm {
+        border: 1.5px solid #ecedec;
+        border-radius: 10px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        padding-left: 10px;
+        transition: 0.2s ease-in-out;
+    }
+
+    .form-input {
+        margin-left: 10px;
+        border-radius: 10px;
+        border: none;
+        width: 70%;
+        height: 100%;
+    }
+
+    .form-input:focus {
+        outline: none;
+    }
+
+    .inputForm:focus-within {
+        border: 1.5px solid #2d79f3;
+    }
+
+    .button-submit {
+        margin: 20px 0 10px 0;
+        background-color: #151717;
+        border: none;
+        color: white;
+        font-size: 15px;
+        font-weight: 500;
+        border-radius: 10px;
+        height: 50px;
+        width: 100%;
+        cursor: pointer;
+    }
+
+    .button-back {
+        display: flex;
+        height: 3em;
+        width: 150px;
+        align-items: center;
+        justify-content: center;
+        background-color: #efefef;
+        border-radius: .60em;
+        letter-spacing: 1px;
+        transition: all 0.2s linear;
+        cursor: pointer;
+        border: none;
+        background: #efefef;
+    }
+
+    .button-back > svg {
+        margin-right: 5px;
+        margin-left: 5px;
+        font-size: 20px;
+        transition: all 0.4s ease-in;
+    }
+
+    .button-back:hover > svg {
+        font-size: 1.2em;
+        transform: translateX(-5px);
+    }
+
+    .button-back:hover {
+        box-shadow: 9px 9px 33px #d1d1d1, -9px -9px 33px #ffffff;
+        transform: translateY(-2px);
+    }
+</style>
 
 {% block content %}
-    <br><br><br>
-    <h1>{{ title }}</h1>
-    <br>
-    <div class="col-md-5">
-        <form method="post">
-            {% csrf_token %}
+    <div style="display: flex">
+                    <a class="button-back" href="{% url 'shop:catalog' %}" style="width: 300px">
+                        <svg height="16" width="16" xmlns="http://www.w3.org/2000/svg" version="1.1"
+                             viewBox="0 0 1024 1024">
+                            <path d="M874.690416 495.52477c0 11.2973-9.168824 20.466124-20.466124 20.466124l-604.773963 0 188.083679 188.083679c7.992021 7.992021 7.992021 20.947078 0 28.939099-4.001127 3.990894-9.240455 5.996574-14.46955 5.996574-5.239328 0-10.478655-1.995447-14.479783-5.996574l-223.00912-223.00912c-3.837398-3.837398-5.996574-9.046027-5.996574-14.46955 0-5.433756 2.159176-10.632151 5.996574-14.46955l223.019353-223.029586c7.992021-7.992021 20.957311-7.992021 28.949332 0 7.992021 8.002254 7.992021 20.957311 0 28.949332l-188.073446 188.073446 604.753497 0C865.521592 475.058646 874.690416 484.217237 874.690416 495.52477z"></path>
+                        </svg>
+                        <span style="padding-left: 5px">Перейти к каталогу</span>
+                    </a></div>
+    <div class="container" style="margin-top: 100px">
+        <div class="row">
+            <div class="login wrap">
+                <h1 class="h1">Введите данные</h1>
+                <br>
+                <div style="display: flex; justify-content: center">
+                    <form method="post"
+                          style="display: flex;flex-direction: column;gap: 10px;background-color: #ffffff;padding: 30px;width: 50%;border-radius: 20px;font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">
+                        {% csrf_token %}
+                        <!-- Отражение общих ошибок авторизации ползователей. Т.е. ошибки связанные не с заполнением полей, напр. неверные логин/пароль-->
+                        <div class="form-error">{{ form.non_field_errors }}</div>
+                        <!-- Конец -->
+                        {% for f in form %}
+                            <p class="inputForm">
+                                <label class="form-label" for="{{ f.id_for_label }}"> {{ f.label }}: </label>{{ f }}
+                            </p>
+                            <div class="form-error">{{ f.errors }}</div>
+                        {% endfor %}
+                        <button type="submit" class="button-submit">Войти
+                        </button>
+                        <br>
 
-            <!-- Отражение общих ошибок авторизации ползователей. Т.е. ошибки связанные не с заполнением полей, напр. неверные логин/пароль-->
-            <div class="form-error">{{ form.non_field_errors }}</div>
-            <!-- Конец -->
-
-            {% for f in form %}
-                <p><label class="form-label" for="{{ f.id_for_label }}"> {{ f.label }}: </label>{{ f }}</p>
-                <div class="form-error">{{ f.errors }}</div>
-                <br><br>
-            {% endfor %}
-            <br><br><br>
-            <button type="submit" class="btn btn-outline-primary">Войти</button>
-            <br>
-        </form>
-        <p class="p">Don't have an account? <a class="span" style="color: #0066ff" href="{% url 'shop:register' %}">Sign
-            Up</a>
+                        <p class="p">Don't have an account? <a class="span" style="color: #0066ff"
+                                                               href="{% url 'shop:register' %}">Sign
+                            Up
+                        </a></p>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
+    <br><br>
+    <div style="height: 150px"></div>
 {% endblock %}
