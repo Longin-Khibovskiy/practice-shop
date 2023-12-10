@@ -1,0 +1,12 @@
+{% load static %}
+{% load humanize %}
+<link rel="stylesheet" href="{% static 'shop/css/normalize.css' %}"/>
+<link rel="stylesheet" href="{% static 'shop/css/detail.css' %}"/>
+<link rel="icon" href="{% static 'shop/img/img.png' %}">
+{% block content %}
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Оплатить">
+    </form>
+{% endblock %}
