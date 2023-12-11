@@ -3,6 +3,13 @@
   width: 200px;
   margin: 50px auto;
 }
+.form-label {
+  width: 28%;
+  text-align: left;
+}
+.form-input {
+  padding-left: 10px;
+}
 
 .input-box {
   font-size: 16px;
