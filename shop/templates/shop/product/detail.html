@@ -199,7 +199,7 @@
             </div>
         </section>
     </main>
-{% else %}
+{% elif category.name == 'Айфоны' %}
     <main class="main">
         <section class="composition">
             <div class="container">
@@ -223,6 +223,97 @@
                                 src="{{ gallery_images.last.image.url }}"
                                 alt=""
                                 width="250px">
+                    {% endif %}
+                </div>
+            </div>
+        </section>
+        <section class="case">
+            <div class="container">
+                <h2 class="case__title main__title">
+                    iPhone. <br>
+                    Выкован из титана.
+                </h2>
+                <h3 class="case__text">
+                    iPhone 15 Pro — первый iPhone, изготовленный из титана авиационного класса, изготовленного из того
+                    же сплава, который используют космические корабли для полетов на Марс.
+                </h3>
+                {% if gallery_images %}
+                    <img
+                            class="content-item color--green content-item__active"
+                            src="{{ gallery_images.first.image.url }}"
+                            alt=""
+                            width="250px"
+                    />
+                {% endif %}
+                <h2 class="energy__title main__title">
+                    Время автономной работы, несомненно, на профессиональном уровне.
+                </h2>
+                <h3>
+                    Даже несмотря на такое количество новых передовых функций, iPhone 15 Pro по-прежнему обеспечивает
+                    потрясающее время автономной работы в течение всего дня.
+                </h3>
+                <p class="energy__num">29 ч</p>
+                <h4 class="energy__text">
+                    воспроизведения видео на iPhone 15 Pro Max.<br>
+                    Добавьте зарядное устройство MagSafe для быстрой и
+                    эффективной беспроводной зарядки.
+                </h4>
+            </div>
+        </section>
+        <section class="audio"
+                 style="background-image: url({% static 'shop/img/group_ip.jpg' %})">
+            <div class="container">
+                <div class="audio__inner">
+                    <div class="audio__box" style="padding-bottom: 75vh;">
+                        <p class="audio__text">
+                            iPhone 15 Pro — это первый iPhone, поддерживающий USB 3.6, что обеспечивает огромный скачок
+                            в скорости передачи данных и ускорении профессиональных рабочих процессов, чем когда-либо
+                            прежде.
+                        </p>
+                        <p class="audio__text">
+                            Новый разъем USB‑C позволяет заряжать Mac или iPad с помощью того же кабеля, который вы
+                            используете для зарядки iPhone 15 Pro. Прощай, беспорядок в кабелях.
+                        </p>
+                        <p class="audio__text">
+                            Вплоть до <br>
+                            <span style="font-size: 50px; font-weight: bold">20 раз быстрее</span><br>
+                            передача файлов
+                        </p>
+                        <p class="audio__text">
+                            А с совершенно новым Wi-Fi 6E7 вы получите в два раза больше скорость беспроводной связи.
+                            Таким образом, вы можете загружать, скачивать и передавать файлы в мгновение ока.
+                        </p>
+                        <button class="btn">КУПИТЬ</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+{% elif category.name == 'Макбуки' %}
+    <main class="main">
+        <section class="composition">
+            <div class="container">
+                <h2 class="composition__title main__title">
+                    Все правильные связи.
+                </h2>
+                <div class="composition__inner">
+                    <div class="composition__inner-text"    >
+                        <p>
+                            MacBook Pro оснащен мощным набором портов для подключения высокоскоростных периферийных
+                            устройств, управления дисплеями с высоким разрешением или прямой выгрузки карт SDXC. Он
+                            поддерживает как Wi-Fi 6E, так и Bluetooth 5.3.
+                        </p>
+                        <p>
+                            Управляйте внешними дисплеями. Подключите один внешний дисплей высокого разрешения к M3, до
+                            двух к M3 Pro или до четырех к M3 Max.
+                        </p>
+                    </div>
+                    {% if gallery_images %}
+                        <img
+                                class="content-item-mac color--green content-item__active"
+                                src="{{ gallery_images.last.image.url }}"
+                                alt=""
+                                width="500px" height="150px">
                     {% endif %}
                 </div>
             </div>
