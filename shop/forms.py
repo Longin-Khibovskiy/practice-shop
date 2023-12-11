@@ -8,6 +8,8 @@ from .models import Review
 
 class RegisterUserForm(UserCreationForm):
     """Форма регистрации пользователей"""
+    name = forms.CharField(label='Имя', widget=forms.TextInput(attrs={'class': 'form-input'}), min_length=2)
+    first_name = forms.CharField(label='Фамилия', widget=forms.TextInput(attrs={'class': 'form-input'}), min_length=2)
     username = forms.CharField(label='Логин', widget=forms.TextInput(attrs={'class': 'form-input'}), min_length=2)
     email = forms.EmailField(label='Email', widget=forms.EmailInput(attrs={'class': 'form-input'}))
     password1 = forms.CharField(label='Пароль', widget=forms.PasswordInput(attrs={'class': 'form-input'}), min_length=8,
@@ -31,13 +33,14 @@ class RegisterUserForm(UserCreationForm):
 
     class Meta:
         model = User  # связываем форму с встроенной моделью User
-        fields = ('username', 'email', 'password1', 'password2')
+        fields = ('name', 'first_name', 'username', 'email', 'password1', 'password2')
 
 
 class LoginUserForm(AuthenticationForm):
     """Форма для аутентификации потльзователей"""
     username = forms.CharField(label='E-mail или логин', widget=forms.TextInput(attrs={'class': 'form-input'}))
-    password = forms.CharField(label='Пароль', widget=forms.PasswordInput(attrs={'class': 'form-input', 'type': 'password'}))
+    password = forms.CharField(label='Пароль',
+                               widget=forms.PasswordInput(attrs={'class': 'form-input', 'type': 'password'}))
 
 
 class FeedbackForm(forms.Form):
