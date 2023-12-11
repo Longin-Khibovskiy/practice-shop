@@ -151,7 +151,11 @@ body {
 
 .color-item img {
     margin-bottom: 20px;
-    width: 275px;
+    min-width: 200px;
+    min-height: 200px;
+    max-width: 275px;
+    max-height: 270px;
+    object-fit: cover;
     background-color: #f3f3f3;
     border: 20px solid #f3f3f3;
     border-radius: 25px;

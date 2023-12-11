@@ -1,6 +1,8 @@
 {% load static %}
+{% load humanize %}
 <link rel="stylesheet" href="{% static 'shop/css/normalize.css' %}"/>
 <link rel="stylesheet" href="{% static 'shop/css/base.css' %}"/>
+<link rel="stylesheet" href="{% static 'shop/css/catalog.css' %}">
 <link rel="icon" href="{% static 'shop/img/img.png' %}">
 {% include 'shop/inc/_header.html' %}
 {% block content %}
@@ -9,13 +11,24 @@
         <div class="container">
             <div class="color-list">
                 {% for prod in prod %}
-                    <div class="color-item">
-                        <a href="{{ prod.get_absolute_url }}">
-                            <img class="color_img" src="
-                                    {% if prod.image %}{{ prod.image.url }}{% else %}{% static 'shop/img/no_image.png' %}{% endif %}"></a>
-                    <span style="display: flex; justify-content: center; margin-top: -10px">{{ prod.title }}</span>
+                    <div class="catalog-card">
+                        <div class="color-item">
+                            <a href="{{ prod.get_absolute_url }}">
+                                <img class="color_img" src="
+
+
+
+
+
+
+
+                                        {% if prod.image %}{{ prod.image.url }}{% else %}{% static 'shop/img/no_image.png' %}{% endif %}">
+                            </a>
+                            <p class="catalog-title">{{ prod.title }}</p>
+                            <p class="catalog-price">{{ prod.price|intcomma }} ₽</p>
+                        </div>
                     </div>
-                    {% empty %}
+                {% empty %}
                     <li>Каталог пуст</li>
                 {% endfor %}
             </div>

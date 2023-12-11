@@ -1,54 +1,51 @@
-{#{% extends "shop/base.html" %}#}
-
 {% load static %}
+{% load humanize %}
 <link rel="stylesheet" href="{% static 'shop/css/normalize.css' %}"/>
 <link rel="stylesheet" href="{% static 'shop/css/base.css' %}"/>
+<link rel="stylesheet" href="{% static 'shop/css/list.css' %}">
 <link rel="icon" href="{% static 'shop/img/img.png' %}">
 {% include 'shop/inc/_header.html' %}
 {% block content %}
     {% if title == 'АЙФОНЫ' %}
         <section class="color">
-            <div class="container">
-                <h2 class="color-title">{% block title %}{{ title }}{% endblock %}</h2>
-                <h2 class="color-title">ВЫБЕРИ СВОЙ ЦВЕТ</h2>
-                <div class="color-list">
-                    {#            Сделать вывод только наушников#}
-                    {% for product in products %}
-                        <div class="color-item">
-                            <a href="{{ product.get_absolute_url }}">{{ product.name }}
-                                <img class="color_img" src="
-                                        {% if product.image %}{{ product.image.url }}{% else %}{% static 'shop/img/no_image.png' %}{% endif %}">
-                            </a>
-                            <a href="{{ product.get_absolute_url }}">{{ product.name }}</a>
-                        </div>
-                    {% endfor %}
-                </div>
-            </div>
-        </section>
-    {% else %}
+        <div class="container">
+        <h2 class="color-title">{% block title %}{{ title }}{% endblock %}</h2>
+        <h2 class="color-title">ВЫБЕРИ СВОЙ ЦВЕТ</h2>
+        <div class="color-list">
+    {% elif title == 'НАУШНИКИ' %}
         <section class="color-headset">
-            <div class="container">
-                <h2 class="color-title">ВЫБЕРИ ЦВЕТ ПОД СВОЙ СТИЛЬ</h2>
-                <p class="color-text">
-                    Идеальный баланс между чистотой hi‑fi и магией AirPods.
-                    Непревзойденное качество персонального звучания.
-                </p>
-                <div class="color-list">
-                    {% for product in products %}
-                        <div class="color-item">
-                            <a href="{{ product.get_absolute_url }}">{{ product.name }}
-                                <img src="
-
-
-
-                                        {% if product.image %}{{ product.image.url }}{% else %}{% static 'shop/img/no_image.png' %}{% endif %}">
-                            </a>
-                            <a href="{{ product.get_absolute_url }}">{{ product.name }}</a>
-                        </div>
-                    {% endfor %}
-                </div>
-            </div>
-        </section>
+        <div class="container">
+        <h2 class="color-title">ВЫБЕРИ ЦВЕТ ПОД СВОЙ СТИЛЬ</h2>
+        <p class="color-text">
+            Идеальный баланс между чистотой hi‑fi и магией AirPods.
+            Непревзойденное качество персонального звучания.
+        </p>
+        <div class="color-list">
+    {% elif title == 'МАКБУКИ' %}
+        <section class="color-headset">
+        <div class="container">
+        <h2 class="color-title">ВЫБЕРИ ЦВЕТ ПОД СВОЙ СТИЛЬ</h2>
+        <p class="color-text">
+            Идеальный баланс между чистотой hi‑fi и магией AirPods.
+            Непревзойденное качество персонального звучания.
+        </p>
+        <div class="color-list">
     {% endif %}
-    {% include 'shop/inc/_footer.html' %}
+{% for product in products %}
+    <div class="catalog-card">
+        <div class="color-item">
+            <a href="{{ product.get_absolute_url }}">{{ product.name }}
+                <img class="color_img" src="
+                        {% if product.image %}{{ product.image.url }}{% else %}{% static 'shop/img/no_image.png' %}{% endif %}">
+            </a>
+            <a href="{{ product.get_absolute_url }}">{{ product.name }}</a>
+        </div>
+        <p class="catalog-title">{{ product.title }}</p>
+        <p class="catalog-price">{{ product.price|intcomma }} ₽</p>
+    </div>
+{% endfor %}
+</div>
+</div>
+</section>
+{% include 'shop/inc/_footer.html' %}
 {% endblock %}
