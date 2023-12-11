@@ -1,0 +1,25 @@
+* {
+    text-align: center;
+}
+
+p {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.about-div {
+    height: 75px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.name_hub_about {
+    font-weight: bold;
+    font-size: 20px;
+    background: linear-gradient(75deg, purple, #a000ff, red);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}

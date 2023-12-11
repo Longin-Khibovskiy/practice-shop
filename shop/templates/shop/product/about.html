@@ -1,16 +1,24 @@
-{% extends "shop/base.html" %}
-
-{% block title %}
-    О нас
-{% endblock %}
-
+{% load static %}
+{% load humanize %}
+<link rel="stylesheet" href="{% static 'shop/css/normalize.css' %}"/>
+<link rel="stylesheet" href="{% static 'shop/css/about.css' %}"/>
+<link rel="icon" href="{% static 'shop/img/img.png' %}">
+{% include 'shop/inc/_header.html' %}
 {% block content %}
-    <h3><br><br><br>Интернет-магазин одежды.</h3>
-    <h5>Адрес: ул. Липовой рощи 1к2, офис. 007</h5>
-    <br><br><br><br>
-    <h4>НАША МИССИЯ</h4>
-    <p>
-        <h5>Развитие, здоровье и осознанное потребление – это то, что вдохновляет нас. Эти ценности мы вложили в наш бренд и в каждую единицу продукции.
-        Мы создаём не просто одежду – мы создаём образ жизни, образ мышления современного, уверенного, развивающегося человека.</h5>
-    </p>
+    <h1>О нас</h1>
+    <h2>Мы группа 3ИС-20 политехнического колледжа имени Н.Н.Годовикова</h2>
+    <h3>Данный проект разработан: </h3>
+    <div class="about-div">
+        <div><a href="https://github.com/Longin-Khibovskiy" class="name_hub_about">Хибовский Лонгин</a></div>
+        <div><a href="https://github.com/Khusainceg77" class="name_hub_about">Хусаинов Руслан</a></div>
+        <div><a href="https://github.com/Veronichka-lanyouk" class="name_hub_about">Ланюк Вероника</a></div>
+        <div><a href="https://github.com/Strr1t" class="name_hub_about">Ларионов Александр</a></div>
+        <div><a href="https://github.com/FuriakAngelika" class="name_hub_about">Фурьяк Анжелика</a></div>
+    <div>(Fullstack developer)</div>
+    <div>Backend developer</div>
+    <div>Frontend developer and designer</div>
+    <div>Backend developer</div>
+    <div>designer</div>
+    </div>
 {% endblock %}
+{% include 'shop/inc/_footer.html' %}
