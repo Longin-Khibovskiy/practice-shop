@@ -75,6 +75,13 @@
         width: 100%;
         cursor: pointer;
     }
+
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        /* display: none; <- Crashes Chrome on hover */
+        -webkit-appearance: none;
+        margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+    }
 </style>
 {#{% include 'shop/inc/_header.html' %}#}
 
@@ -96,14 +103,6 @@
                                 <label class="form-label" for="{{ f.id_for_label }}"> {{ f.label }}: </label>{{ f }}
                             </p>
                             <div class="form-error">{{ f.errors }}</div>
-                        {% endfor %}
-
-                        {% for i in form_num %}
-                            <p class="inputForm">
-                                <label class="form-label" for="{{ i.id_for_label }}"> {{ i.label }}: </label>{{ i }}
-                            </p>
-                            <div class="form-error">{{ i.errors }}</div>
-
                         {% endfor %}
                         <div class="container">
 
@@ -144,16 +143,16 @@
                             <form action="">
                                 <div class="inputBox">
                                     <span>card number</span>
-                                    <input type="text" maxlength="16" class="card-number-input">
+                                    <input type="text" maxlength="16" class="card-number-input" required id="myInput" onkeypress="return isNumberKey(event)">
                                 </div>
                                 <div class="inputBox">
-                                    <span>card holder</span>
-                                    <input type="text" class="card-holder-input">
+                                    <span>Full Name</span>
+                                    <input type="text" minlength="2" maxlength="30" class="card-holder-input" required>
                                 </div>
                                 <div class="flexbox">
                                     <div class="inputBox">
                                         <span>expiration mm</span>
-                                        <select name="" id="" class="month-input">
+                                        <select name="" id="" class="month-input" required>
                                             <option value="month" selected disabled>month</option>
                                             <option value="01">01</option>
                                             <option value="02">02</option>
@@ -171,11 +170,8 @@
                                     </div>
                                     <div class="inputBox">
                                         <span>expiration yy</span>
-                                        <select name="" id="" class="year-input">
+                                        <select name="" id="" class="year-input" required>
                                             <option value="year" selected disabled>year</option>
-                                            <option value="2021">2021</option>
-                                            <option value="2022">2022</option>
-                                            <option value="2023">2023</option>
                                             <option value="2024">2024</option>
                                             <option value="2025">2025</option>
                                             <option value="2026">2026</option>
@@ -187,7 +183,8 @@
                                     </div>
                                     <div class="inputBox">
                                         <span>cvv</span>
-                                        <input type="text" maxlength="4" class="cvv-input">
+                                        <input type="text" maxlength="3" minlength="2" class="cvv-input" onkeypress="return isNumberKey(event)"
+                                               required>
                                     </div>
                                 </div>
                                 <button type="submit" value="submit" class="submit-btn">
@@ -240,4 +237,10 @@
         document.querySelector('.cvv-box').innerText = document.querySelector('.cvv-input').value;
     }
 
+    function isNumberKey(evt) {
+        var charCode = (evt.which) ? evt.which : evt.keyCode
+        if (charCode > 31 && (charCode < 48 || charCode > 57))
+            return false;
+        return true;
+    }
 </script>
