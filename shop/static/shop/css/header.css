@@ -228,13 +228,15 @@ body {
     z-index: 100;
     position: fixed;
     display: flex;
+    top: 0;
+    left: 0;
+    right: 0;
     align-items: center;
     justify-content: space-between;
-    padding: 30px 40px 15px 40px;
+    padding: 30px 40px 30px 40px ;
     margin: 0 auto;
-    border-radius: 30px;
-    margin-top: -25px;
 }
+
 /*width: -webkit-fill-available;*/
 
 .header__top.active {
