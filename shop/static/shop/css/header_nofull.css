@@ -240,7 +240,7 @@ body {
 /*width: -webkit-fill-available;*/
 
 .header__top.active {
-    background: white;
+    background-color: white;
 }
 
 .menu__list {
