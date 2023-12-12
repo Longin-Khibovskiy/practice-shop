@@ -231,6 +231,10 @@ body {
     padding: 40px 0;
 }
 
+.header__top.active {
+    background: #fff;
+}
+
 .menu__list {
     display: flex;
     align-items: center;
