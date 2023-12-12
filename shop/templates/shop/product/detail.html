@@ -192,7 +192,17 @@
                             А в Apple Music специальный пространственный звук с динамическим отслеживанием положения
                             головы создает уникальные трехмерные впечатления от прослушивания.
                         </p>
-                        <button class="btn">КУПИТЬ</button>
+                        {% if product.available %}
+                            <form action="{% url 'cart:cart_add' product.id %}" method="post" class="buy_from">
+                                {% csrf_token %}
+                                {{ cart_product_form.quantity }}
+                                <div>
+                                    <button class="btn">КУПИТЬ</span>
+                                    </button>
+                                </div>
+                                </span>
+                            </form>
+                        {% endif %}
                     </div>
                 </div>
             </div>
@@ -282,7 +292,17 @@
                             А с совершенно новым Wi-Fi 6E7 вы получите в два раза больше скорость беспроводной связи.
                             Таким образом, вы можете загружать, скачивать и передавать файлы в мгновение ока.
                         </p>
-                        <button class="btn">КУПИТЬ</button>
+                        {% if product.available %}
+                            <form action="{% url 'cart:cart_add' product.id %}" method="post" class="buy_from">
+                                {% csrf_token %}
+                                {{ cart_product_form.quantity }}
+                                <div>
+                                    <button class="btn">КУПИТЬ</span>
+                                    </button>
+                                </div>
+                                </span>
+                            </form>
+                        {% endif %}
                     </div>
                 </div>
             </div>
@@ -377,16 +397,26 @@
                             ближайшем Mac. С помощью iCloud вы можете получить доступ к своим любимым файлам с вашего
                             iPhone или вашего Mac. И многое другое.
                         </p>
+                        <h2 class="audio__text">
+                            Mac and iPad
+                        </h2>
                         <p class="audio__text">
-                            Вплоть до <br>
-                            <span style="font-size: 50px; font-weight: bold">20 раз быстрее</span><br>
-                            передача файлов
+                            Создайте эскиз на iPad и мгновенно отобразите его на своем Mac. Или используйте iPad в
+                            качестве второго дисплея, чтобы вы могли работать на одном экране, одновременно ориентируясь
+                            на другой. Вы даже можете запустить проект Final Cut Pro на своем iPad и продолжить его на
+                            своем Mac.
                         </p>
-                        <p class="audio__text">
-                            А с совершенно новым Wi-Fi 6E7 вы получите в два раза больше скорость беспроводной связи.
-                            Таким образом, вы можете загружать, скачивать и передавать файлы в мгновение ока.
-                        </p>
-                        <button class="btn">КУПИТЬ</button>
+                        {% if product.available %}
+                            <form action="{% url 'cart:cart_add' product.id %}" method="post" class="buy_from">
+                                {% csrf_token %}
+                                {{ cart_product_form.quantity }}
+                                <div>
+                                    <button class="btn">КУПИТЬ</span>
+                                    </button>
+                                </div>
+                                </span>
+                            </form>
+                        {% endif %}
                     </div>
                 </div>
             </div>

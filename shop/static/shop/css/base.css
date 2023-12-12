@@ -183,7 +183,7 @@ body {
 }
 
 .audio__inner {
-    min-height: 220vh;
+    min-height: 204vh;
     display: flex;
     justify-content: center;
     align-items: flex-end;
