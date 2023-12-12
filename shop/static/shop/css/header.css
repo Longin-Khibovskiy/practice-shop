@@ -87,7 +87,7 @@
     font-size: 60px;
     font-family: "Arial";
     text-transform: uppercase;
-    color: transparent ;
+    color: transparent;
     -webkit-text-stroke: 1px var(--stroke-color);
     cursor: pointer;
 }
@@ -225,14 +225,18 @@ body {
 }
 
 .header__top {
+    z-index: 100;
+    position: fixed;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 40px 0;
+    padding: 30px 40px 15px 40px;
+    width: -webkit-fill-available;
+    margin-left: -8.3%;
 }
 
 .header__top.active {
-    background: #fff;
+    background: white;
 }
 
 .menu__list {
