@@ -26,7 +26,7 @@ class PaymentForm(forms.Form):
     card_number = forms.CharField(label='Card Number', max_length=16)
     cardholder_name = forms.CharField(label='Cardholder Name', max_length=100)
     expiration_date = forms.DateField(label='Expiration Date')
-    cvv = forms.IntegerField(label='CVV')
+    cvv = forms.IntegerField(label='cvv')
 
     def clean_card_number(self):
         card_number = self.cleaned_data['card_number']

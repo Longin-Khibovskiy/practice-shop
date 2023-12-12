@@ -37,7 +37,6 @@ INSTALLED_APPS = [
     'shop.apps.ShopConfig',
     'cart.apps.CartConfig',
     'orders.apps.OrderConfig',
-
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
@@ -127,3 +126,4 @@ MESSAGE_TAGS = {
     messages.WARNING: 'alert-warning',
     messages.ERROR: 'alert-danger',
 }
+
