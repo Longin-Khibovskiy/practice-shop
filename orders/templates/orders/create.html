@@ -5,84 +5,6 @@
 <link rel="stylesheet" href="{% static 'shop/css/cart.css' %}"/>
 
 <link rel="icon" href="{% static 'shop/img/img.png' %}">
-<style>
-    body {
-        background-color: #efefef;
-        text-align: center;
-    }
-
-    h1 {
-        text-align: center;
-    }
-
-    ::placeholder {
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    }
-
-    form {
-        width: 100%;
-        align-content: center;
-        text-align: center;
-    }
-
-    .input {
-        margin-left: 10px;
-        border-radius: 10px;
-        border: none;
-        width: 100%;
-        height: 100%;
-    }
-
-    .input:focus {
-        outline: none;
-    }
-
-    .inputForm {
-        border: 1.5px solid #ecedec;
-        border-radius: 10px;
-        height: 50px;
-        display: flex;
-        align-items: center;
-        padding-left: 10px;
-        transition: 0.2s ease-in-out;
-    }
-
-    .input {
-        margin-left: 10px;
-        border-radius: 10px;
-        border: none;
-        width: 100%;
-        height: 100%;
-    }
-
-    .input:focus {
-        outline: none;
-    }
-
-    .inputForm:focus-within {
-        border: 1.5px solid #2d79f3;
-    }
-
-    .button-submit {
-        margin: 20px 0 10px 0;
-        background-color: #151717;
-        border: none;
-        color: white;
-        font-size: 15px;
-        font-weight: 500;
-        border-radius: 10px;
-        height: 50px;
-        width: 100%;
-        cursor: pointer;
-    }
-
-    input::-webkit-outer-spin-button,
-    input::-webkit-inner-spin-button {
-        /* display: none; <- Crashes Chrome on hover */
-        -webkit-appearance: none;
-        margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
-    }
-</style>
 {#{% include 'shop/inc/_header.html' %}#}
 
 {% block content %}
@@ -93,7 +15,7 @@
                 <br>
                 <div style="display: flex; justify-content: center">
                     <form method="post"
-                          style="display: flex;flex-direction: column;gap: 10px;background-color: #ffffff;padding: 30px;width: 100%;border-radius: 20px;font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">
+                          style="display: flex;flex-direction: column;gap: 10px;background-color: #ffffff;padding: 30px;border-radius: 20px;font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">
                         {% csrf_token %}
                         <!-- Отражение общих ошибок авторизации ползователей. Т.е. ошибки связанные не с заполнением полей, напр. неверные логин/пароль-->
                         <div class="form-error">{{ form.non_field_errors }}</div>
@@ -120,7 +42,7 @@
                                             <div class="card-holder-name">full name</div>
                                         </div>
                                         <div class="box">
-                                            <span>expires</span>
+                                            <span>valid thru</span>
                                             <div class="expiration">
                                                 <span class="exp-month">mm</span>
                                                 <span class="exp-year">yy</span>
@@ -132,8 +54,11 @@
                                 <div class="back">
                                     <div class="stripe"></div>
                                     <div class="box">
-                                        <span>cvv</span>
-                                        <div class="cvv-box"></div>
+                                        <span>cvc</span>
+                                        <div style="width: 100%; display: flex; justify-content: right">
+                                            <div class="cvv-box"></div>
+                                        </div>
+
                                         <img rel=" {% static 'shop/img/visa.png' %}" alt="">
                                     </div>
                                 </div>
@@ -141,9 +66,10 @@
                             </div>
 
                             <form action="">
-                                <div class="inputBox">
+                                <div class="inputBox" style="margin-top: 60px">
                                     <span>card number</span>
-                                    <input type="text" maxlength="16" class="card-number-input" required id="myInput" onkeypress="return isNumberKey(event)">
+                                    <input type="text" maxlength="16" class="card-number-input" required id="myInput"
+                                           onkeypress="return isNumberKey(event)">
                                 </div>
                                 <div class="inputBox">
                                     <span>Full Name</span>
@@ -182,8 +108,9 @@
                                         </select>
                                     </div>
                                     <div class="inputBox">
-                                        <span>cvv</span>
-                                        <input type="text" maxlength="3" minlength="2" class="cvv-input" onkeypress="return isNumberKey(event)"
+                                        <span>cvc</span>
+                                        <input type="text" maxlength="3" minlength="2" class="cvv-input"
+                                               onkeypress="return isNumberKey(event)"
                                                required>
                                     </div>
                                 </div>
