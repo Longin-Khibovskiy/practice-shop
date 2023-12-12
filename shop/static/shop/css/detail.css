@@ -145,7 +145,7 @@ body {
 }
 
 .choose-color__title {
-    font-size: 36px;
+    font-size: 45px;
     font-weight: 700;
     max-width: 555px;
     margin: 0 auto 20px;
@@ -231,6 +231,17 @@ body {
 .energy__text {
     max-width: 400px;
     margin: 0 auto;
+}
+/*SECTION TYPOGRAPHY*/
+.section_typography {
+    display: flex;
+    justify-content: space-around;
+    width: 50%;
+    font-size: 18px;
+}
+.span_fast {
+    font-size: 50px;
+    font-weight: bold;
 }
 
 .audio {
