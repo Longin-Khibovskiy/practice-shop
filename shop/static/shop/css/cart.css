@@ -69,7 +69,7 @@ form {
 }
 
 #id_postal_code {
-    width: 66%;
+    width: 65%;
 }
 
 input::-webkit-outer-spin-button,
@@ -79,7 +79,7 @@ input::-webkit-inner-spin-button {
     margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
 }
 
-* {
+.full_card {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
@@ -92,7 +92,6 @@ input::-webkit-inner-spin-button {
 }
 
 .container {
-    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -138,7 +137,7 @@ input::-webkit-inner-spin-button {
 }
 
 .container form .submit-btn {
-    width: 100%;
+    width: 65%;
     background: linear-gradient(45deg, blueviolet, deeppink);
     margin-top: 20px;
     padding: 10px;
@@ -169,7 +168,7 @@ input::-webkit-inner-spin-button {
     top: 0;
     left: 0;
     background: linear-gradient(45deg, blueviolet, deeppink);
-    border-radius: 5px;
+    border-radius: 20px;
     backface-visibility: hidden;
     box-shadow: 0 15px 25px rgba(0, 0, 0, .2);
     padding: 20px;
@@ -214,7 +213,7 @@ input::-webkit-inner-spin-button {
     height: 100%;
     width: 100%;
     background: linear-gradient(45deg, blueviolet, deeppink);
-    border-radius: 5px;
+    border-radius: 20px;
     padding: 20px 0;
     text-align: right;
     backface-visibility: hidden;
@@ -243,10 +242,20 @@ input::-webkit-inner-spin-button {
     height: 50px;
     padding: 15px;
     margin-top: 5px;
-    color:#333;
+    color: #333;
     background: #fff;
     border-radius: 5px;
     width: 30%;
+}
+
+.cvc_block_div {
+    width: 100%;
+    display: flex;
+    justify-content: right
+}
+
+.card_data {
+    height: 46px;
 }
 
 .container .card-container .back .box img {
@@ -256,4 +265,44 @@ input::-webkit-inner-spin-button {
 
 .card-number-box {
     letter-spacing: 2px;
+}
+
+.button-back {
+    display: flex;
+    height: 3em;
+    width: 50%;
+    align-items: center;
+    justify-content: center;
+    background-color: #eeeeee4b;
+    border-radius: .60em;
+    letter-spacing: 1px;
+    transition: all 0.2s linear;
+    cursor: pointer;
+    border: none;
+    background: #fff;
+}
+
+.button-back > svg {
+    margin-right: 5px;
+    margin-left: 5px;
+    font-size: 20px;
+    transition: all 0.4s ease-in;
+}
+
+.button-back:hover > svg {
+    font-size: 1.2em;
+    transform: translateX(-5px);
+}
+
+.button-back:hover {
+    box-shadow: 9px 9px 33px #d1d1d1, -9px -9px 33px #ffffff;
+    transform: translateY(-2px);
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
 }

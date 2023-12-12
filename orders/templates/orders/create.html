@@ -5,130 +5,143 @@
 <link rel="stylesheet" href="{% static 'shop/css/cart.css' %}"/>
 
 <link rel="icon" href="{% static 'shop/img/img.png' %}">
-{#{% include 'shop/inc/_header.html' %}#}
+<div style="background-color: white">
+    {% include 'shop/inc/_header.html' %}</div>
 
 {% block content %}
-    <div class="container" style="">
-        <div class="row">
-            <div class="login wrap">
-                <h1 class="h1">Заполните данные</h1>
-                <br>
-                <div style="display: flex; justify-content: center">
-                    <form method="post"
-                          style="display: flex;flex-direction: column;gap: 10px;background-color: #ffffff;padding: 30px;border-radius: 20px;font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">
-                        {% csrf_token %}
-                        <!-- Отражение общих ошибок авторизации ползователей. Т.е. ошибки связанные не с заполнением полей, напр. неверные логин/пароль-->
-                        <div class="form-error">{{ form.non_field_errors }}</div>
-                        <!-- Конец -->
-                        {% for f in form %}
-                            <p class="inputForm">
-                                <label class="form-label" for="{{ f.id_for_label }}"> {{ f.label }}: </label>{{ f }}
-                            </p>
-                            <div class="form-error">{{ f.errors }}</div>
-                        {% endfor %}
-                        <div class="container">
+    <div class="full_card">
+        <div class="container" style="">
+            <div class="row">
+                <div class="login wrap" style="margin-top: 50px">
+                    <h1 class="h1">Заполните данные</h1>
+                    <br>
+                    <div style="display: flex; justify-content: center">
+                        <form method="post"
+                              style="display: flex;flex-direction: column;gap: 1px;background-color: #ffffff;padding: 30px;border-radius: 20px;font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">
+                            {% csrf_token %}
+                            <!-- Отражение общих ошибок авторизации ползователей. Т.е. ошибки связанные не с заполнением полей, напр. неверные логин/пароль-->
+                            <div class="form-error">{{ form.non_field_errors }}</div>
+                            <!-- Конец -->
+                            {% for f in form %}
+                                <p class="inputForm">
+                                    <label class="form-label" for="{{ f.id_for_label }}"> {{ f.label }}: </label>{{ f }}
+                                </p>
+                                <div class="form-error">{{ f.errors }}</div>
+                            {% endfor %}
+                            <div class="container">
 
-                            <div class="card-container">
+                                <div class="card-container">
 
-                                <div class="front">
-                                    <div class="image">
-                                        <img src="{% static 'shop/img/chip.png' %}" alt="">
-                                        <img src="{% static 'shop/img/visa.png' %}">
-                                    </div>
-                                    <div class="card-number-box"></div>
-                                    <div class="flexbox">
-                                        <div class="box">
-                                            <span>card holder</span>
-                                            <div class="card-holder-name">full name</div>
+                                    <div class="front">
+                                        <div class="image">
+                                            <img src="{% static 'shop/img/chip.png' %}" alt="">
+                                            <img src="{% static 'shop/img/visa.png' %}">
                                         </div>
-                                        <div class="box">
-                                            <span>valid thru</span>
-                                            <div class="expiration">
-                                                <span class="exp-month">mm</span>
-                                                <span class="exp-year">yy</span>
+                                        <div class="card-number-box"></div>
+                                        <div class="flexbox">
+                                            <div class="box">
+                                                <span>card holder</span>
+                                                <div class="card-holder-name">full name</div>
+                                            </div>
+                                            <div class="box">
+                                                <span>valid thru</span>
+                                                <div class="expiration">
+                                                    <span class="exp-month">mm</span>
+                                                    <span class="exp-year">yy</span>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
 
-                                <div class="back">
-                                    <div class="stripe"></div>
-                                    <div class="box">
-                                        <span>cvc</span>
-                                        <div style="width: 100%; display: flex; justify-content: right">
-                                            <div class="cvv-box"></div>
+                                    <div class="back">
+                                        <div class="stripe"></div>
+                                        <div class="box">
+                                            <span>cvc</span>
+                                            <div class="cvc_block_div">
+                                                <div class="cvv-box"></div>
+                                            </div>
+
+                                            <img rel=" {% static 'shop/img/visa.png' %}" alt="">
                                         </div>
-
-                                        <img rel=" {% static 'shop/img/visa.png' %}" alt="">
                                     </div>
                                 </div>
-
+                                <form action="">
+                                    <div class="inputBox" style="margin-top: 60px">
+                                        <span>card number</span>
+                                        <input type="text" maxlength="16" class="card-number-input card_data" required
+                                               id="myInput"
+                                               onkeypress="return isNumberKey(event)">
+                                    </div>
+                                    <div class="inputBox">
+                                        <span>Full Name</span>
+                                        <input type="text" minlength="2" maxlength="30"
+                                               class="card-holder-input card_data" required>
+                                    </div>
+                                    <div class="flexbox">
+                                        <div class="inputBox">
+                                            <span>expiration mm</span>
+                                            <select name="" id="" class="month-input card_data" required>
+                                                <option value="month" selected disabled>month</option>
+                                                <option value="01">01</option>
+                                                <option value="02">02</option>
+                                                <option value="03">03</option>
+                                                <option value="04">04</option>
+                                                <option value="05">05</option>
+                                                <option value="06">06</option>
+                                                <option value="07">07</option>
+                                                <option value="08">08</option>
+                                                <option value="09">09</option>
+                                                <option value="10">10</option>
+                                                <option value="11">11</option>
+                                                <option value="12">12</option>
+                                            </select>
+                                        </div>
+                                        <div class="inputBox">
+                                            <span>expiration yy</span>
+                                            <select name="" id="" class="year-input card_data" required>
+                                                <option value="year" selected disabled>year</option>
+                                                <option value="2024">2024</option>
+                                                <option value="2025">2025</option>
+                                                <option value="2026">2026</option>
+                                                <option value="2027">2027</option>
+                                                <option value="2028">2028</option>
+                                                <option value="2029">2029</option>
+                                                <option value="2030">2030</option>
+                                                <option value="2031">2031</option>
+                                                <option value="2032">2032</option>
+                                                <option value="2032">2033</option>
+                                                <option value="2032">2034</option>
+                                                <option value="2032">2035</option>
+                                            </select>
+                                        </div>
+                                        <div class="inputBox">
+                                            <span>cvc</span>
+                                            <input type="text" maxlength="3" minlength="2" class="cvv-input card_data"
+                                                   onkeypress="return isNumberKey(event)"
+                                                   required>
+                                        </div>
+                                    </div>
+                                    <div style="display: flex; justify-content: space-between; width: 100%;align-items: flex-end;">
+                                        <a class="button-back" href="{% url 'shop:catalog' %}" style="width: 30%">
+                                            <svg height="16" width="16" xmlns="http://www.w3.org/2000/svg" version="1.1"
+                                                 viewBox="0 0 1024 1024">
+                                                <path d="M874.690416 495.52477c0 11.2973-9.168824 20.466124-20.466124 20.466124l-604.773963 0 188.083679 188.083679c7.992021 7.992021 7.992021 20.947078 0 28.939099-4.001127 3.990894-9.240455 5.996574-14.46955 5.996574-5.239328 0-10.478655-1.995447-14.479783-5.996574l-223.00912-223.00912c-3.837398-3.837398-5.996574-9.046027-5.996574-14.46955 0-5.433756 2.159176-10.632151 5.996574-14.46955l223.019353-223.029586c7.992021-7.992021 20.957311-7.992021 28.949332 0 7.992021 8.002254 7.992021 20.957311 0 28.949332l-188.073446 188.073446 604.753497 0C865.521592 475.058646 874.690416 484.217237 874.690416 495.52477z"></path>
+                                            </svg>
+                                            <span style="padding-left: 5px">Назад</span>
+                                        </a>
+                                        <button type="submit" value="submit" class="submit-btn">
+                                            {{ cart_total_price|intcomma }}</button>
+                                    </div>
+                                </form>
                             </div>
-
-                            <form action="">
-                                <div class="inputBox" style="margin-top: 60px">
-                                    <span>card number</span>
-                                    <input type="text" maxlength="16" class="card-number-input" required id="myInput"
-                                           onkeypress="return isNumberKey(event)">
-                                </div>
-                                <div class="inputBox">
-                                    <span>Full Name</span>
-                                    <input type="text" minlength="2" maxlength="30" class="card-holder-input" required>
-                                </div>
-                                <div class="flexbox">
-                                    <div class="inputBox">
-                                        <span>expiration mm</span>
-                                        <select name="" id="" class="month-input" required>
-                                            <option value="month" selected disabled>month</option>
-                                            <option value="01">01</option>
-                                            <option value="02">02</option>
-                                            <option value="03">03</option>
-                                            <option value="04">04</option>
-                                            <option value="05">05</option>
-                                            <option value="06">06</option>
-                                            <option value="07">07</option>
-                                            <option value="08">08</option>
-                                            <option value="09">09</option>
-                                            <option value="10">10</option>
-                                            <option value="11">11</option>
-                                            <option value="12">12</option>
-                                        </select>
-                                    </div>
-                                    <div class="inputBox">
-                                        <span>expiration yy</span>
-                                        <select name="" id="" class="year-input" required>
-                                            <option value="year" selected disabled>year</option>
-                                            <option value="2024">2024</option>
-                                            <option value="2025">2025</option>
-                                            <option value="2026">2026</option>
-                                            <option value="2027">2027</option>
-                                            <option value="2028">2028</option>
-                                            <option value="2029">2029</option>
-                                            <option value="2030">2030</option>
-                                        </select>
-                                    </div>
-                                    <div class="inputBox">
-                                        <span>cvc</span>
-                                        <input type="text" maxlength="3" minlength="2" class="cvv-input"
-                                               onkeypress="return isNumberKey(event)"
-                                               required>
-                                    </div>
-                                </div>
-                                <button type="submit" value="submit" class="submit-btn">
-                                    {{ cart_total_price|intcomma }}</button>
-                            </form>
-
-                        </div>
-
-
-                    </form>
-
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
+        <br><br>
+        <div style="height: 150px"></div>
     </div>
-    <br><br>
-    <div style="height: 150px"></div>
 {% endblock %}
 {% include 'shop/inc/_footer.html' %}
 
