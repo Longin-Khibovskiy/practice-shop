@@ -166,6 +166,7 @@ body {
     border-radius: 20px;
     border: 1px solid #777;
     padding: 50px 55px;
+    max-width: 250px;
 }
 
 .choose-color-btn--active {
@@ -326,6 +327,12 @@ body {
     width: 300px;
 }
 
+.input-group-prepend {
+    font-family: AppleMyungjo;
+    font-size: 30px;
+    color: #252525;
+    letter-spacing: 2px;
+}
 .price {
     font-family: AppleMyungjo;
     font-size: 40px;

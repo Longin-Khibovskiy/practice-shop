@@ -86,6 +86,7 @@
             {% csrf_token %}
             <span class="input-group add-to-cart shadow-custom">
                                 <div class="input-group-prepend">
+                                    <p style="margin: 0">{{ product.title }}</p>
                                     <span class="price">₽ {{ product.price }}</span>
                                 </div><br>
                                 {{ cart_product_form.quantity }}
@@ -109,6 +110,7 @@
                 <a class="choose-color-btn" data-button="color--black"
                    href="{{ other_product.get_absolute_url }}">
                     <img src="{{ other_product.image.url }}" alt="" width="125px"/>
+                    <p style="margin: 0">{{ other_product.title }}</p>
                 </a>
             {% endfor %}
         </div>
@@ -297,7 +299,7 @@
                     Все правильные связи.
                 </h2>
                 <div class="composition__inner">
-                    <div class="composition__inner-text"    >
+                    <div class="composition__inner-text">
                         <p>
                             MacBook Pro оснащен мощным набором портов для подключения высокоскоростных периферийных
                             устройств, управления дисплеями с высоким разрешением или прямой выгрузки карт SDXC. Он
