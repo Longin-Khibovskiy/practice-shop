@@ -141,7 +141,7 @@
                     </div>
                     {% if gallery_images %}
                         <img
-                                class="content-item color--white content-item__active"
+                                class="content-item-pods color--white content-item__active"
                                 src="{{ gallery_images.first.image.url }}"
                                 alt=""
                         />
@@ -349,10 +349,9 @@
                 </h3>
                 {% if gallery_images %}
                     <img
-                            class="content-item color--green content-item__active"
+                            class="content-item color--green content-item__active img_mac"
                             src="{{ gallery_images.first.image.url }}"
                             alt=""
-                            width="250px"
                     />
                 {% endif %}
                 <h2 class="energy__title main__title">

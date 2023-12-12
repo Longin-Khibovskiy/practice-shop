@@ -320,6 +320,9 @@ body {
 .footer__text {
     padding: 20px 0;
 }
+.img_mac {
+    height: 400px;
+}
 
 .footer__list {
     padding-top: 80px;
@@ -334,7 +337,7 @@ body {
     width: 250px;
 }
 
-.container .content-item {
+.container .content-item-pods {
     width: 300px;
 }
 
