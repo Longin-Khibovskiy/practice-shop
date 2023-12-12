@@ -1,19 +1,41 @@
 {% load static %}
 <link rel="stylesheet" href="{% static 'shop/css/normalize.css' %}"/>
-<link rel="stylesheet" href="{% static 'shop/css/header.css' %}"/>
+<link rel="stylesheet" href="{% static 'shop/css/header_nofull.css' %}"/>
 <link rel="stylesheet" href="{% static 'shop/css/detail.css' %}"/>
 <link rel="icon" href="{% static 'shop/img/img.png' %}">
 <title>{% block title %}О товаре{% endblock %}</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>$(window).on("scroll", function () {
+    if ($(window).scrollTop() > 50) {
+        $(".header__top").addClass("active");
+    } else {
+        //remove the background property so it comes transparent again (defined in your css)
+        $(".header__top").removeClass("active");
+    }
+});
+
+function toggleFixed() {
+    adjustWidth();
+    $(".header__top").toggleClass("fixed");
+}
+
+function adjustWidth() {
+    var parentwidth = $(".container").width();
+    $(".header__top").width(parentwidth);
+}</script>
 {% include 'shop/inc/_header.html' %}
 {% block content %}
     {% if category.name == 'Наушники' %}
-        <div class="header__content">
+        <div class="header__content" style="margin-top: 100px">
         <h1 class="title">
         <span class="title--air">Air</span
         ><span class="title--pod">Pod</span><span class="title--s">S</span>
         <span class="title--max">MAX</span>
     {% elif category.name == 'Айфоны' %}
-        <div class="header__content">
+        <div class="header__content" style="margin-top: 100px">
+        <h1 class="title">
+    {% elif category.name == 'Макбуки' %}
+        <div class="header__content" style="margin-top: 100px">
         <h1 class="title">
     {% endif %}
 <!-- <span class="title--ax"></span> -->

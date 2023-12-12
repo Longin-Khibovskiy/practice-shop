@@ -225,17 +225,22 @@ body {
 }
 
 .header__top {
+    z-index: 100;
+    position: fixed;
     display: flex;
+    top: 0;
+    left: 0;
+    right: 0;
     align-items: center;
     justify-content: space-between;
-    padding: 30px 40px 30px 40px ;
+    padding: 30px 60px 30px 60px ;
     margin: 0 auto;
 }
 
 /*width: -webkit-fill-available;*/
 
 .header__top.active {
-    background: linear-gradient(to bottom, white 60%, transparent 100%);
+    background: white;
 }
 
 .menu__list {
