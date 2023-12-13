@@ -2,8 +2,8 @@
 {% load humanize %}
 <link rel="stylesheet" href="{% static 'shop/css/normalize.css' %}"/>
 {#<link rel="stylesheet" href="{% static 'shop/css/detail.css' %}"/>#}
+<link href="https://fonts.cdnfonts.com/css/credit-card" rel="stylesheet">
 <link rel="stylesheet" href="{% static 'shop/css/cart.css' %}"/>
-
 <link rel="icon" href="{% static 'shop/img/img.png' %}">
 <div style="background-color: white">
     {% include 'shop/inc/_header.html' %}</div>
@@ -65,12 +65,11 @@
                                         </div>
                                     </div>
                                 </div>
-                                <form action="">
+                                <form action="" class="form_card">
                                     <div class="inputBox" style="margin-top: 60px">
                                         <span>card number</span>
-                                        <input type="text" maxlength="16" class="card-number-input card_data" required
-                                               id="myInput"
-                                               onkeypress="return isNumberKey(event)">
+                                        <input type="text" maxlength="19" minlength="19"  class="card-number-input card_data" required
+                                               id="myInput">
                                     </div>
                                     <div class="inputBox">
                                         <span>Full Name</span>
@@ -183,4 +182,31 @@
             return false;
         return true;
     }
+
+    {#$(".card-number-box").keyup(function(){#}
+    {#    var $this = $(this);#}
+    {#    if ((($this.val().length+1) % 5)==0){#}
+    {#        $this.val($this.val() + " ");#}
+    {#    }#}
+    {#$(".card-number-input").keyup(function(){#}
+    {#    var $this = $(this);#}
+    {#    if ($this.val().length>=4){#}
+    {#     $this.next().focus();#}
+    {#    }#}
+    {#$(".card-number-input").keyup(function(){#}
+    {#    var $this = $(this);#}
+    {#    if ((($this.val().length+1) % 5)==0){#}
+    {#        $this.val($this.val() + " ");#}
+    {#    }#}
+    document.querySelector('.card-number-input').addEventListener('keydown', function (e) {
+        let value = this.value.replace(/\s+/g, '');
+        let isBackspace = e.key === 'Backspace';
+
+        if ((e.key.length === 1 && /^[^\d\s]+$/.test(e.key)) || (!isBackspace && value.length === 16)) {
+            e.preventDefault();
+            return false;
+        }
+
+        this.value = value.split('').reverse().join('').replace(/\B(?=(\d{4})+(?!\d))/g, " ").split('').reverse().join('').trim();
+    });
 </script>
