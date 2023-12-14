@@ -19,7 +19,7 @@ SECRET_KEY = 'django-insecure--vl3ox=h38opfu*4%l-%hyz1w*i-^c!gacx+8sp^d%kjkmiksq
 
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = [
     'jazzmin',
@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'shop.apps.ShopConfig',
     'cart.apps.CartConfig',
     'orders.apps.OrderConfig',
+    'base.apps.BaseConfig',
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
@@ -103,10 +104,10 @@ USE_I18N = True
 
 USE_TZ = True
 
-#STATIC_URL = '/static/'
-#STATIC_ROOT = os.path.join(BASE_DIR,
-#'static')  # тут хранится путь к общей папке static, в кот будут собираться все статич файлы и использоваться на боевом веб сервере-хостинге
-#STATICFILES_DIRS = []  # список для нестандартных путей где искать ститичные файлы
+# STATIC_URL = '/static/'
+# STATIC_ROOT = os.path.join(BASE_DIR,
+# 'static')  # тут хранится путь к общей папке static, в кот будут собираться все статич файлы и использоваться на боевом веб сервере-хостинге
+# STATICFILES_DIRS = []  # список для нестандартных путей где искать ститичные файлы
 STATIC_URL = '/static/'
 STATICFILES_DIRS = ('shop/static',)
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
@@ -126,4 +127,3 @@ MESSAGE_TAGS = {
     messages.WARNING: 'alert-warning',
     messages.ERROR: 'alert-danger',
 }
-

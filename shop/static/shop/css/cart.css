@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
-@import url('https://fonts.cdnfonts.com/css/credit-card');
 
 body {
     background-color: #efefef;
@@ -155,12 +154,11 @@ input::-webkit-inner-spin-button {
 }
 
 .container .card-container {
-    margin-top: 20px;
     margin-bottom: -20px;
     position: relative;
-    height: 270px;
-    width: 420px;
-    font-family: 'Credit Card', sans-serif;
+    height: 250px;
+    width: 400px;
+
 }
 
 .container .card-container .front {
@@ -197,7 +195,6 @@ input::-webkit-inner-spin-button {
 
 .container .card-container .front .flexbox {
     display: flex;
-    margin-top: 25px;
 }
 
 .container .card-container .front .flexbox .box:nth-child(1) {
@@ -308,8 +305,4 @@ input::-webkit-inner-spin-button {
     text-decoration: none;
     display: block;
     text-align: left;
-}
-
-.card-number-box {
-    font-family: 'Credit Card', sans-serif;
 }

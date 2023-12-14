@@ -8,10 +8,10 @@ urlpatterns = [
     path('cart/', include('cart.urls', namespace='cart')),
     path('orders/', include('orders.urls')),
     path('captcha/', include('captcha.urls')),
+    path('base/', include('base.urls')),
     path('', include('shop.urls', namespace='shop')),  # копируем все urls из приложения shop
-
 ]
-
+# handler404 = 'base.views.error_404_view'
 if settings.DEBUG:
     import debug_toolbar
 

@@ -235,17 +235,12 @@ body {
     justify-content: space-between;
     padding: 30px 60px 30px 60px ;
     margin: 0 auto;
-    background-color: transparent;
-    transition: background-color 0.5s;
-    box-shadow: 0 0 20px transparent;
 }
 
 /*width: -webkit-fill-available;*/
 
 .header__top.active {
     background-color: white;
-    transition: background-color 0.5s;
-    box-shadow: 0 0 20px white;
 }
 
 .menu__list {
