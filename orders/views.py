@@ -48,8 +48,8 @@ def PaymentForm(request):
             card_number.clear_cart()
             send_mail('Заказ Оформлен',
                       'Войдите в админ панель, что бы просмотреть новый заказ.',
-                      'l.khibovskiy@gmail.com',
-                      ['l.khibovskiy@gmail.com '],
+                      'django.project@mail.ru',
+                      ['django.project@mail.ru'],
                       fail_silently=True)  # ошибка будет игнорироваться, программа продолжит работу
         return render(request, 'orders/created.html', {'card_number': card_number})
     else:
