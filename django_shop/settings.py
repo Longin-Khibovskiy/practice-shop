@@ -116,12 +116,8 @@ INTERNAL_IPS = [
     "127.0.0.1",
 ]
 
-EMAIL_HOST_USER = 'django.project@mail.ru'
-EMAIL_HOST_PASSWORD = 'qxGzUtKUDUMaxtJMmLD1'
-EMAIL_HOST = 'smtp.mail.ru'
-EMAIL_PORT = 2525
-EMAIL_USE_SSL = True
-EMAIL_USE_TLC = False
+EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
+EMAIL_FILE_PATH = 'emails/email-messages/'
 
 MESSAGE_TAGS = {
     messages.DEBUG: 'alert-info',
